@@ -1,0 +1,91 @@
+export const CONTACT_INFO = {
+  phone: '8886663807',
+  email: 'prconstructioninteriors@gmail.com',
+  address: 'Visakhapatnam, Andhra Pradesh',
+  whatsappUrl: 'https://wa.me/918886663807',
+} as const;
+
+export const SERVICES = [
+  {
+    id: 'construction',
+    name: 'Construction',
+    path: '/services/construction',
+    description: 'Complete construction solutions from foundation to finish',
+    image: 'https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg?auto=compress&cs=tinysrgb&w=800',
+  },
+  {
+    id: 'interior-design',
+    name: 'Interior Design',
+    path: '/services/interior-design',
+    description: 'Transform your space with innovative interior solutions',
+    image: 'https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=800',
+  },
+  {
+    id: 'renovations',
+    name: 'Renovations',
+    path: '/services/renovations',
+    description: 'Breathe new life into your existing spaces',
+    image: 'https://images.pexels.com/photos/834892/pexels-photo-834892.jpeg?auto=compress&cs=tinysrgb&w=800',
+  },
+] as const;
+
+export const DESIGN_IDEAS = [
+  { id: 'modular-kitchen', name: 'Modular Kitchen Designs', image: 'https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?auto=compress&cs=tinysrgb&w=800' },
+  { id: 'wardrobe', name: 'Wardrobe Designs', image: 'https://images.pexels.com/photos/1457847/pexels-photo-1457847.jpeg?auto=compress&cs=tinysrgb&w=800' },
+  { id: 'bathroom', name: 'Bathroom Designs', image: 'https://images.pexels.com/photos/1454804/pexels-photo-1454804.jpeg?auto=compress&cs=tinysrgb&w=800' },
+  { id: 'master-bedroom', name: 'Master Bedroom Designs', image: 'https://images.pexels.com/photos/1454804/pexels-photo-1454804.jpeg?auto=compress&cs=tinysrgb&w=800' },
+  { id: 'living-room', name: 'Living Room Designs', image: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800' },
+  { id: 'pooja-room', name: 'Pooja Room Designs', image: 'https://images.pexels.com/photos/3214113/pexels-photo-3214113.jpeg?auto=compress&cs=tinysrgb&w=800' },
+  { id: 'tv-unit', name: 'TV Unit Designs', image: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800' },
+  { id: 'false-ceiling', name: 'False Ceiling Designs', image: 'https://images.pexels.com/photos/1457847/pexels-photo-1457847.jpeg?auto=compress&cs=tinysrgb&w=800' },
+  { id: 'kids-bedroom', name: 'Kids Bedroom Designs', image: 'https://images.pexels.com/photos/1454804/pexels-photo-1454804.jpeg?auto=compress&cs=tinysrgb&w=800' },
+  { id: 'balcony', name: 'Balcony Designs', image: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800' },
+  { id: 'dining-room', name: 'Dining Room Designs', image: 'https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?auto=compress&cs=tinysrgb&w=800' },
+  { id: 'foyer', name: 'Foyer Designs', image: 'https://images.pexels.com/photos/1457847/pexels-photo-1457847.jpeg?auto=compress&cs=tinysrgb&w=800' },
+  { id: 'homes-by-livspace', name: 'Homes by Livspace', image: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800' },
+  { id: 'home-office', name: 'Home Office Designs', image: 'https://images.pexels.com/photos/1454804/pexels-photo-1454804.jpeg?auto=compress&cs=tinysrgb&w=800' },
+  { id: 'guest-bedroom', name: 'Guest Bedroom Designs', image: 'https://images.pexels.com/photos/1454804/pexels-photo-1454804.jpeg?auto=compress&cs=tinysrgb&w=800' },
+  { id: 'window', name: 'Window Designs', image: 'https://images.pexels.com/photos/1457847/pexels-photo-1457847.jpeg?auto=compress&cs=tinysrgb&w=800' },
+  { id: 'flooring', name: 'Flooring Designs', image: 'https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?auto=compress&cs=tinysrgb&w=800' },
+  { id: 'wall-decor', name: 'Wall Decor Designs', image: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800' },
+  { id: 'wall-paint', name: 'Wall Paint Designs', image: 'https://images.pexels.com/photos/1457847/pexels-photo-1457847.jpeg?auto=compress&cs=tinysrgb&w=800' },
+  { id: 'wallpaper', name: 'Home Wallpaper Designs', image: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800' },
+  { id: 'tile', name: 'Tile Designs', image: 'https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?auto=compress&cs=tinysrgb&w=800' },
+  { id: 'study-room', name: 'Study Room Designs', image: 'https://images.pexels.com/photos/1454804/pexels-photo-1454804.jpeg?auto=compress&cs=tinysrgb&w=800' },
+  { id: 'kitchen-sinks', name: 'Kitchen Sinks', image: 'https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?auto=compress&cs=tinysrgb&w=800' },
+  { id: 'space-saving', name: 'Space Saving Designs', image: 'https://images.pexels.com/photos/1457847/pexels-photo-1457847.jpeg?auto=compress&cs=tinysrgb&w=800' },
+  { id: 'door', name: 'Door Designs', image: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800' },
+  { id: 'staircase', name: 'Staircase Designs', image: 'https://images.pexels.com/photos/1457847/pexels-photo-1457847.jpeg?auto=compress&cs=tinysrgb&w=800' },
+  { id: 'crockery-unit', name: 'Crockery Unit Designs', image: 'https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?auto=compress&cs=tinysrgb&w=800' },
+  { id: 'home-bar', name: 'Home Bar Designs', image: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800' },
+] as const;
+
+export const PORTFOLIO_PROJECTS = [
+  {
+    id: '1',
+    title: 'Modern Villa Construction',
+    location: 'Visakhapatnam',
+    type: 'Construction',
+    beforeImage: 'https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg?auto=compress&cs=tinysrgb&w=800',
+    afterImage: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800',
+    description: 'Complete construction of a 3-bedroom modern villa with contemporary design elements.',
+  },
+  {
+    id: '2',
+    title: 'Luxury Kitchen Interior',
+    location: 'Srikakulam',
+    type: 'Interior Design',
+    beforeImage: 'https://images.pexels.com/photos/834892/pexels-photo-834892.jpeg?auto=compress&cs=tinysrgb&w=800',
+    afterImage: 'https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?auto=compress&cs=tinysrgb&w=800',
+    description: 'Complete modular kitchen transformation with premium finishes and smart storage solutions.',
+  },
+  {
+    id: '3',
+    title: 'Office Renovation',
+    location: 'Vizianagaram',
+    type: 'Renovations',
+    beforeImage: 'https://images.pexels.com/photos/834892/pexels-photo-834892.jpeg?auto=compress&cs=tinysrgb&w=800',
+    afterImage: 'https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=800',
+    description: 'Modern office space renovation with ergonomic design and improved lighting.',
+  },
+] as const;
