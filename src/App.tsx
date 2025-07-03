@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import StickyWidgets from './components/StickyWidgets';
+import AIAgent from './components/AIAgent';
 import Home from './pages/Home';
 import Construction from './pages/services/Construction';
 import InteriorDesign from './pages/services/InteriorDesign';
@@ -138,6 +139,7 @@ function App() {
         </main>
         <Footer />
         <StickyWidgets />
+        <AIAgent />
       </div>
     </Router>
   );
