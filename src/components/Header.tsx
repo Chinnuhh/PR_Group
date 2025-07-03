@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown, Phone, Building } from 'lucide-react';
+import { Menu, X, ChevronDown, Phone } from 'lucide-react';
 import { SERVICES, DESIGN_IDEAS } from '../utils/constants';
 
 const Header: React.FC = () => {
@@ -34,7 +34,11 @@ const Header: React.FC = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3 group">
             <div className="relative">
-              <Building className="h-8 w-8 text-pastel-blue-dark transition-all duration-300 group-hover:scale-110 group-hover:rotate-12" />
+              <img 
+                src="/Logo PR Group copy.png" 
+                alt="PR Group Logo" 
+                className="h-10 w-auto transition-all duration-300 group-hover:scale-110"
+              />
               <div className="absolute -inset-1 bg-pastel-blue rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
             </div>
             <div className="transform transition-transform duration-300 group-hover:translate-x-1">

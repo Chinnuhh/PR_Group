@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import StickyWidgets from './components/StickyWidgets';
 import AIAgent from './components/AIAgent';
+import LoadingScreen from './components/LoadingScreen';
 import Home from './pages/Home';
 import Construction from './pages/services/Construction';
 import InteriorDesign from './pages/services/InteriorDesign';
@@ -109,6 +110,16 @@ const createDesignIdeaPage = (ideaId: string, ideaName: string) => {
 };
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  const handleLoadingComplete = () => {
+    setIsLoading(false);
+  };
+
+  if (isLoading) {
+    return <LoadingScreen onLoadingComplete={handleLoadingComplete} />;
+  }
+
   return (
     <Router>
       <div className="App">

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Building, Phone, Mail, MapPin } from 'lucide-react';
+import { Phone, Mail, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { CONTACT_INFO, SERVICES } from '../utils/constants';
 
@@ -19,7 +19,11 @@ const Footer: React.FC = () => {
           <div className="animate-fade-in-up">
             <div className="flex items-center space-x-3 mb-6 group">
               <div className="relative">
-                <Building className="h-8 w-8 text-pastel-blue-dark transition-all duration-300 group-hover:scale-110 group-hover:rotate-12" />
+                <img 
+                  src="/Logo PR Group copy.png" 
+                  alt="PR Group Logo" 
+                  className="h-8 w-auto transition-all duration-300 group-hover:scale-110 group-hover:rotate-12 filter brightness-0 invert"
+                />
                 <div className="absolute -inset-1 bg-pastel-blue-dark/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
               <div>
