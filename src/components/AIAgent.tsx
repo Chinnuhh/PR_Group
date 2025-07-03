@@ -126,7 +126,7 @@ const AIAgent: React.FC = () => {
 
   const handleContactAction = (type: 'whatsapp' | 'call') => {
     if (type === 'whatsapp') {
-      const message = encodeURIComponent("Hi! I was chatting with your AI assistant and would like to discuss my project requirements.");
+      const message = encodeURIComponent("Hi! I was chatting with your assistant and would like to discuss my project requirements.");
       window.open(`${CONTACT_INFO.whatsappUrl}?text=${message}`, '_blank');
     } else {
       window.open(`tel:${CONTACT_INFO.phone}`, '_self');
@@ -138,16 +138,11 @@ const AIAgent: React.FC = () => {
       <button
         onClick={() => setIsOpen(true)}
         className="fixed bottom-24 right-6 z-50 bg-gradient-to-r from-pastel-blue-dark to-pastel-purple-dark text-white p-4 rounded-full shadow-xl transition-all duration-500 transform hover:scale-110 hover:shadow-2xl animate-float group"
-        title="Chat with our AI assistant"
+        title="Chat with our assistant"
       >
         <div className="absolute inset-0 bg-gradient-to-r from-pastel-purple-dark to-pastel-pink-dark opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full"></div>
-        <Bot className="h-6 w-6 relative z-10 group-hover:animate-wiggle" />
+        <MessageCircle className="h-6 w-6 relative z-10 group-hover:animate-wiggle" />
         <div className="absolute inset-0 rounded-full bg-pastel-blue-dark/30 animate-ping"></div>
-        
-        {/* Notification badge */}
-        <div className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-6 h-6 flex items-center justify-center animate-pulse">
-          AI
-        </div>
       </button>
     );
   }
@@ -160,7 +155,7 @@ const AIAgent: React.FC = () => {
       <div className="bg-gradient-to-r from-pastel-blue-dark to-pastel-purple-dark text-white p-4 rounded-t-2xl flex items-center justify-between">
         <div className="flex items-center space-x-3">
           <div className="bg-white/20 rounded-full p-2">
-            <Bot className="h-5 w-5" />
+            <MessageCircle className="h-5 w-5" />
           </div>
           <div>
             <h3 className="font-semibold">PR Group Assistant</h3>
@@ -200,7 +195,7 @@ const AIAgent: React.FC = () => {
                       ? 'bg-gradient-to-r from-pastel-blue-dark to-pastel-purple-dark text-white' 
                       : 'bg-pastel-gray text-pastel-gray-dark'
                   }`}>
-                    {message.isBot ? <Bot className="h-4 w-4" /> : <User className="h-4 w-4" />}
+                    {message.isBot ? <MessageCircle className="h-4 w-4" /> : <User className="h-4 w-4" />}
                   </div>
                   <div className={`rounded-2xl p-3 ${
                     message.isBot
@@ -222,7 +217,7 @@ const AIAgent: React.FC = () => {
               <div className="flex justify-start">
                 <div className="flex items-start space-x-2">
                   <div className="w-8 h-8 rounded-full bg-gradient-to-r from-pastel-blue-dark to-pastel-purple-dark text-white flex items-center justify-center">
-                    <Bot className="h-4 w-4" />
+                    <MessageCircle className="h-4 w-4" />
                   </div>
                   <div className="bg-pastel-blue rounded-2xl p-3">
                     <div className="flex space-x-1">

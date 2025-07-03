@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle, Award, Users, Clock, Phone } from 'lucide-react';
+import { ArrowRight, CheckCircle, Award, Users, Clock, Phone, Bot, MessageCircle, Zap } from 'lucide-react';
 import Hero from '../components/Hero';
 import ServiceCard from '../components/ServiceCard';
-import { SERVICES, PORTFOLIO_PROJECTS } from '../utils/constants';
+import { SERVICES, PORTFOLIO_PROJECTS, CONTACT_INFO } from '../utils/constants';
 
 const Home: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -26,9 +26,160 @@ const Home: React.FC = () => {
     return () => observer.disconnect();
   }, []);
 
+  const handleChatClick = () => {
+    const chatButton = document.querySelector('[title="Chat with our assistant"]') as HTMLButtonElement;
+    if (chatButton) {
+      chatButton.click();
+    }
+  };
+
+  const handleWhatsAppClick = () => {
+    const message = encodeURIComponent("Hi! I'm interested in getting a quote for my project. Can you help me with the details?");
+    window.open(`${CONTACT_INFO.whatsappUrl}?text=${message}`, '_blank');
+  };
+
   return (
     <div>
       <Hero />
+      
+      {/* AI Agent Section */}
+      <section className="py-16 bg-gradient-to-br from-pastel-blue-light via-white to-pastel-purple-light relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          }}></div>
+        </div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 animate-fade-in-up">
+            <div className="flex items-center justify-center mb-4">
+              <div className="bg-gradient-to-r from-pastel-blue-dark to-pastel-purple-dark rounded-full p-3 mr-4">
+                <Bot className="h-8 w-8 text-white" />
+              </div>
+              <h2 className="text-4xl font-bold text-gray-900">Meet Your Smart Assistant</h2>
+            </div>
+            <p className="text-xl text-pastel-gray-dark max-w-3xl mx-auto">
+              Get instant answers about construction, interior design, and renovation projects. Our intelligent assistant is available 24/7 to help you plan your dream space.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Features */}
+            <div className="space-y-6 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+              <div className="flex items-start space-x-4 group">
+                <div className="bg-pastel-blue/20 rounded-full p-3 group-hover:bg-pastel-blue/30 transition-colors duration-300">
+                  <Zap className="h-6 w-6 text-pastel-blue-dark" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Instant Responses</h3>
+                  <p className="text-pastel-gray-dark">Get immediate answers to your construction and design questions, available round the clock.</p>
+                </div>
+              </div>
+
+              <div className="flex items-start space-x-4 group">
+                <div className="bg-pastel-green/20 rounded-full p-3 group-hover:bg-pastel-green/30 transition-colors duration-300">
+                  <MessageCircle className="h-6 w-6 text-pastel-green-dark" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Expert Guidance</h3>
+                  <p className="text-pastel-gray-dark">Receive professional advice on project planning, material selection, and design choices.</p>
+                </div>
+              </div>
+
+              <div className="flex items-start space-x-4 group">
+                <div className="bg-pastel-purple/20 rounded-full p-3 group-hover:bg-pastel-purple/30 transition-colors duration-300">
+                  <Phone className="h-6 w-6 text-pastel-purple-dark" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Seamless Connection</h3>
+                  <p className="text-pastel-gray-dark">Easily connect with our team via WhatsApp or phone for detailed consultations.</p>
+                </div>
+              </div>
+
+              <div className="pt-6">
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <button
+                    onClick={handleChatClick}
+                    className="group bg-gradient-to-r from-pastel-blue-dark to-pastel-purple-dark text-white px-6 py-3 rounded-full font-semibold transition-all duration-500 transform hover:scale-105 hover:shadow-xl"
+                  >
+                    <span className="flex items-center justify-center">
+                      <Bot className="h-5 w-5 mr-2 group-hover:animate-wiggle" />
+                      Start Chatting
+                      <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-2 transition-transform duration-300" />
+                    </span>
+                  </button>
+                  
+                  <button
+                    onClick={handleWhatsAppClick}
+                    className="group bg-gradient-to-r from-pastel-green-dark to-pastel-blue-dark text-white px-6 py-3 rounded-full font-semibold transition-all duration-500 transform hover:scale-105 hover:shadow-xl"
+                  >
+                    <span className="flex items-center justify-center">
+                      <MessageCircle className="h-5 w-5 mr-2 group-hover:animate-pulse-soft" />
+                      WhatsApp Us
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* Chat Preview */}
+            <div className="animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+              <div className="bg-white rounded-2xl shadow-xl border border-pastel-blue/20 overflow-hidden">
+                {/* Chat Header */}
+                <div className="bg-gradient-to-r from-pastel-blue-dark to-pastel-purple-dark text-white p-4">
+                  <div className="flex items-center space-x-3">
+                    <div className="bg-white/20 rounded-full p-2">
+                      <MessageCircle className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold">PR Group Assistant</h3>
+                      <p className="text-xs text-white/80">Online • Ready to help</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Sample Messages */}
+                <div className="p-4 space-y-4 h-64 overflow-hidden">
+                  <div className="flex justify-start">
+                    <div className="flex items-start space-x-2 max-w-[80%]">
+                      <div className="w-8 h-8 rounded-full bg-gradient-to-r from-pastel-blue-dark to-pastel-purple-dark text-white flex items-center justify-center">
+                        <MessageCircle className="h-4 w-4" />
+                      </div>
+                      <div className="bg-pastel-blue text-pastel-blue-dark rounded-2xl p-3">
+                        <p className="text-sm">Hi! I'm your PR Group assistant. How can I help you with your construction or interior design project today?</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex justify-end">
+                    <div className="bg-gradient-to-r from-pastel-blue-dark to-pastel-purple-dark text-white rounded-2xl p-3 max-w-[80%]">
+                      <p className="text-sm">I'm interested in a modular kitchen design. Can you help?</p>
+                    </div>
+                  </div>
+
+                  <div className="flex justify-start">
+                    <div className="flex items-start space-x-2 max-w-[80%]">
+                      <div className="w-8 h-8 rounded-full bg-gradient-to-r from-pastel-blue-dark to-pastel-purple-dark text-white flex items-center justify-center">
+                        <MessageCircle className="h-4 w-4" />
+                      </div>
+                      <div className="bg-pastel-blue text-pastel-blue-dark rounded-2xl p-3">
+                        <p className="text-sm">Absolutely! We specialize in modular kitchen designs with smart storage solutions and premium finishes. Would you like to see our portfolio or discuss your requirements?</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex justify-center">
+                    <div className="bg-pastel-gray/50 text-pastel-gray-dark px-4 py-2 rounded-full text-xs">
+                      Start your conversation...
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       
       {/* About Section */}
       <section className="py-20 bg-gradient-to-br from-pastel-blue-light via-white to-pastel-purple-light animate-on-scroll">
