@@ -137,7 +137,7 @@ const AIAgent: React.FC = () => {
     return (
       <button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-24 right-6 z-50 bg-gradient-to-r from-pastel-blue-dark to-pastel-purple-dark text-white p-4 rounded-full shadow-xl transition-all duration-500 transform hover:scale-110 hover:shadow-2xl animate-float group"
+        className="fixed bottom-[180px] right-6 z-50 bg-gradient-to-r from-pastel-blue-dark to-pastel-purple-dark text-white p-4 rounded-full shadow-xl transition-all duration-500 transform hover:scale-110 hover:shadow-2xl animate-float group"
         title="Chat with our assistant"
       >
         <div className="absolute inset-0 bg-gradient-to-r from-pastel-purple-dark to-pastel-pink-dark opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full"></div>

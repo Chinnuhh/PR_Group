@@ -16,7 +16,7 @@ const StickyWidgets: React.FC = () => {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col space-y-4 animate-fade-in">
+    <div className="fixed bottom-6 right-6 z-40 flex flex-col space-y-4 animate-fade-in">
       {/* WhatsApp Widget */}
       <div className="relative group">
         <button
