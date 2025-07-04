@@ -36,6 +36,7 @@ export default {
         'float': 'float 3s ease-in-out infinite',
         'pulse-soft': 'pulseSoft 2s ease-in-out infinite',
         'wiggle': 'wiggle 1s ease-in-out infinite',
+        'loading-bar': 'loadingBar 0.6s ease-out',
       },
       keyframes: {
         fadeIn: {
@@ -77,6 +78,10 @@ export default {
         wiggle: {
           '0%, 100%': { transform: 'rotate(-3deg)' },
           '50%': { transform: 'rotate(3deg)' },
+        },
+        loadingBar: {
+          '0%': { width: '0%' },
+          '100%': { width: '100%' },
         },
       },
       backdropBlur: {

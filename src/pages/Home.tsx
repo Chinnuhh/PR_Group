@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle, Award, Users, Clock, Phone, Bot, MessageCircle, Zap } from 'lucide-react';
 import Hero from '../components/Hero';
 import ServiceCard from '../components/ServiceCard';
+import NavigationLink from '../components/NavigationLink';
 import { SERVICES, PORTFOLIO_PROJECTS, CONTACT_INFO } from '../utils/constants';
 
 const Home: React.FC = () => {
@@ -282,13 +282,13 @@ const Home: React.FC = () => {
           </div>
           
           <div className="text-center mt-12 animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
-            <Link
+            <NavigationLink
               to="/portfolio"
               className="group inline-flex items-center bg-gradient-to-r from-pastel-blue-dark to-pastel-purple-dark hover:from-pastel-purple-dark hover:to-pastel-pink-dark text-white px-8 py-3 rounded-full font-semibold transition-all duration-500 transform hover:scale-110 hover:shadow-2xl"
             >
               View All Projects
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-2 transition-transform duration-300" />
-            </Link>
+            </NavigationLink>
           </div>
         </div>
       </section>
@@ -318,16 +318,17 @@ const Home: React.FC = () => {
               Let's discuss how we can bring your vision to life with our expert construction and design services.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <a
-                href="tel:8886663807"
+              <NavigationLink
+                to="tel:8886663807"
+                external
                 className="group bg-white text-pastel-blue-dark hover:bg-pastel-blue-light px-8 py-3 rounded-full font-semibold transition-all duration-500 transform hover:scale-110 hover:shadow-2xl"
               >
                 <span className="flex items-center justify-center">
                   <Phone className="h-5 w-5 mr-2 group-hover:animate-wiggle" />
                   Call Now
                 </span>
-              </a>
-              <Link
+              </NavigationLink>
+              <NavigationLink
                 to="/contact"
                 className="group bg-gradient-to-r from-pastel-orange-dark to-pastel-pink-dark hover:from-pastel-pink-dark hover:to-pastel-orange-dark text-white px-8 py-3 rounded-full font-semibold transition-all duration-500 transform hover:scale-110 hover:shadow-2xl"
               >
@@ -335,7 +336,7 @@ const Home: React.FC = () => {
                   Get Free Consultation
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-2 transition-transform duration-300" />
                 </span>
-              </Link>
+              </NavigationLink>
             </div>
           </div>
         </div>

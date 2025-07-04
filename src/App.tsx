@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import StickyWidgets from './components/StickyWidgets';
 import AIAgent from './components/AIAgent';
 import LoadingScreen from './components/LoadingScreen';
+import PageTransition from './components/PageTransition';
 import Home from './pages/Home';
 import Construction from './pages/services/Construction';
 import InteriorDesign from './pages/services/InteriorDesign';
@@ -14,6 +15,7 @@ import DesignIdeaTemplate from './pages/design-ideas/DesignIdeaTemplate';
 import Portfolio from './pages/Portfolio';
 import Contact from './pages/Contact';
 import { DESIGN_IDEAS } from './utils/constants';
+import { usePageTransition } from './hooks/usePageTransition';
 
 // Design idea page component generator
 const createDesignIdeaPage = (ideaId: string, ideaName: string) => {
@@ -109,6 +111,44 @@ const createDesignIdeaPage = (ideaId: string, ideaName: string) => {
   return DesignIdeaPage;
 };
 
+// App Content Component with Page Transition
+const AppContent: React.FC = () => {
+  const { isLoading } = usePageTransition();
+
+  return (
+    <PageTransition isLoading={isLoading}>
+      <Header />
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          
+          {/* Services Routes */}
+          <Route path="/services/construction" element={<Construction />} />
+          <Route path="/services/interior-design" element={<InteriorDesign />} />
+          <Route path="/services/renovations" element={<Renovations />} />
+          
+          {/* Design Ideas Routes */}
+          <Route path="/design-ideas/modular-kitchen" element={<ModularKitchen />} />
+          {DESIGN_IDEAS.filter(idea => idea.id !== 'modular-kitchen').map((idea) => (
+            <Route
+              key={idea.id}
+              path={`/design-ideas/${idea.id}`}
+              element={React.createElement(createDesignIdeaPage(idea.id, idea.name))}
+            />
+          ))}
+          
+          {/* Other Routes */}
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </main>
+      <Footer />
+      <StickyWidgets />
+      <AIAgent />
+    </PageTransition>
+  );
+};
+
 function App() {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -123,34 +163,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Header />
-        <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            
-            {/* Services Routes */}
-            <Route path="/services/construction" element={<Construction />} />
-            <Route path="/services/interior-design" element={<InteriorDesign />} />
-            <Route path="/services/renovations" element={<Renovations />} />
-            
-            {/* Design Ideas Routes */}
-            <Route path="/design-ideas/modular-kitchen" element={<ModularKitchen />} />
-            {DESIGN_IDEAS.filter(idea => idea.id !== 'modular-kitchen').map((idea) => (
-              <Route
-                key={idea.id}
-                path={`/design-ideas/${idea.id}`}
-                element={React.createElement(createDesignIdeaPage(idea.id, idea.name))}
-              />
-            ))}
-            
-            {/* Other Routes */}
-            <Route path="/portfolio" element={<Portfolio />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-        </main>
-        <Footer />
-        <StickyWidgets />
-        <AIAgent />
+        <AppContent />
       </div>
     </Router>
   );
