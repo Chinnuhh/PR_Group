@@ -27,25 +27,18 @@ const Hero: React.FC = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Video Background */}
+      {/* Image Background */}
       <div className="absolute inset-0 w-full h-full">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
+        <img
+          src="https://media.istockphoto.com/id/1540164261/photo/luxury-house-with-swimming-pool-at-night.jpg?s=2048x2048&w=is&k=20&c=8vQrZKZQXOZQXOZQXOZQXOZQXOZQXOZQXOZQXOZQXOZQXOZQ="
+          alt="Luxury House with Swimming Pool at Night"
           className="w-full h-full object-cover"
-        >
-          <source src="https://cdn.pixabay.com/video/2024/01/15/196652-905263018_large.mp4" type="video/mp4" />
-          <source src="https://cdn.pixabay.com/video/2024/01/15/196652-905263018_medium.mp4" type="video/mp4" />
-          {/* Fallback image if video fails to load */}
-          <img 
-            src="https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg?auto=compress&cs=tinysrgb&w=1600" 
-            alt="Luxury Villa" 
-            className="w-full h-full object-cover"
-          />
-        </video>
-        {/* Video Overlay */}
+          onError={(e) => {
+            // Fallback to a high-quality alternative if the iStock image fails to load
+            e.currentTarget.src = "https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg?auto=compress&cs=tinysrgb&w=1600";
+          }}
+        />
+        {/* Image Overlay */}
         <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-black/70"></div>
       </div>
 
