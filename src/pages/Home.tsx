@@ -27,9 +27,17 @@ const Home: React.FC = () => {
   }, []);
 
   const handleChatClick = () => {
-    const chatButton = document.querySelector('[title="Chat with our assistant"]') as HTMLButtonElement;
-    if (chatButton) {
-      chatButton.click();
+    // Find the AI agent component and trigger its open state
+    const aiAgentButton = document.querySelector('[title="Chat with our assistant"]') as HTMLButtonElement;
+    if (aiAgentButton) {
+      aiAgentButton.click();
+      // Scroll to keep the chat visible but not at the very bottom
+      setTimeout(() => {
+        window.scrollBy({
+          top: -200,
+          behavior: 'smooth'
+        });
+      }, 100);
     }
   };
 
