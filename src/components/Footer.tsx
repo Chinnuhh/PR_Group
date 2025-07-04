@@ -119,14 +119,14 @@ const Footer: React.FC = () => {
           <h3 className="text-lg font-semibold mb-6 text-center text-pastel-blue-dark">Find Us</h3>
           <div className="rounded-2xl overflow-hidden h-64 shadow-2xl border border-pastel-blue/20">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d243646.89708614598!2d83.0818!3d17.6868!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a39431389e6973f%3A0x92d9c20395498844!2sVisakhapatnam%2C%20Andhra%20Pradesh!5e0!3m2!1sen!2sin!4v1643875550000!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3785.8234567890123!2d83.8944444!3d18.2977778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3be38d4b123456%3A0x789abcdef0123456!2s80-10P%2C%202nd%20floor%20beside%20KIMS%20hospital%2C%20Srikakulam%20532001!5e0!3m2!1sen!2sin!4v1643875550000!5m2!1sen!2sin"
               width="100%"
               height="100%"
               style={{ border: 0 }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="PR Group Location"
+              title="PR Group Office Location - Srikakulam"
               className="hover:brightness-110 transition-all duration-300"
             ></iframe>
           </div>

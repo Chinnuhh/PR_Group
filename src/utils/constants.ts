@@ -1,7 +1,7 @@
 export const CONTACT_INFO = {
   phone: '8886663807',
   email: 'prconstructioninteriors@gmail.com',
-  address: 'Visakhapatnam, Andhra Pradesh',
+  address: '80-10P, 2nd floor beside KIMS hospital, Srikakulam 532001',
   whatsappUrl: 'https://wa.me/918886663807',
 } as const;
 
