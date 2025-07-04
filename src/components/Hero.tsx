@@ -36,11 +36,17 @@ const Hero: React.FC = () => {
           playsInline
           className="w-full h-full object-cover"
         >
-          <source src="https://videos.pexels.com/video-files/3129671/3129671-uhd_2560_1440_30fps.mp4" type="video/mp4" />
-          <source src="https://videos.pexels.com/video-files/3129671/3129671-hd_1920_1080_30fps.mp4" type="video/mp4" />
+          <source src="https://cdn.pixabay.com/video/2024/01/15/196652-905263018_large.mp4" type="video/mp4" />
+          <source src="https://cdn.pixabay.com/video/2024/01/15/196652-905263018_medium.mp4" type="video/mp4" />
+          {/* Fallback image if video fails to load */}
+          <img 
+            src="https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg?auto=compress&cs=tinysrgb&w=1600" 
+            alt="Luxury Villa" 
+            className="w-full h-full object-cover"
+          />
         </video>
         {/* Video Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-black/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-black/70"></div>
       </div>
 
       {/* Background Pattern */}
