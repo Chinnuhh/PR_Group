@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown, Phone, Bot } from 'lucide-react';
+import { Menu, X, ChevronDown, Phone, MessageCircle } from 'lucide-react';
 import { SERVICES, DESIGN_IDEAS } from '../utils/constants';
 import NavigationLink from './NavigationLink';
 
@@ -39,8 +39,14 @@ const Header: React.FC<HeaderProps> = ({ onAIAssistantClick }) => {
     setIsMenuOpen(false);
   };
 
+  const handleAIAssistantClick = () => {
+    onAIAssistantClick?.();
+    setActiveDropdown(null);
+    setIsMenuOpen(false);
+  };
+
   return (
-    <header className={`sticky top-0 z-50 transition-all duration-500 ${
+    <header className={`sticky top-0 z-40 transition-all duration-500 ${
       isScrolled 
         ? 'bg-surface-white/95 backdrop-blur-md shadow-lg border-b border-mustard-100' 
         : 'bg-surface-white shadow-md'
@@ -157,11 +163,11 @@ const Header: React.FC<HeaderProps> = ({ onAIAssistantClick }) => {
 
             {/* AI Assistant Link */}
             <button
-              onClick={onAIAssistantClick}
-              className={`relative px-3 py-2 text-sm font-medium transition-all duration-300 group text-charcoal-600 hover:text-mustard-400`}
+              onClick={handleAIAssistantClick}
+              className="relative px-3 py-2 text-sm font-medium transition-all duration-300 group text-charcoal-600 hover:text-mustard-400"
             >
               <div className="flex items-center">
-                <Bot className="h-4 w-4 mr-2 group-hover:animate-wiggle" />
+                <MessageCircle className="h-4 w-4 mr-2 group-hover:animate-wiggle" />
                 AI Assistant
               </div>
               <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-mustard-400 transition-all duration-300 group-hover:w-full"></div>
@@ -243,14 +249,11 @@ const Header: React.FC<HeaderProps> = ({ onAIAssistantClick }) => {
               </NavigationLink>
 
               <button
-                onClick={() => {
-                  onAIAssistantClick?.();
-                  handleLinkClick();
-                }}
+                onClick={handleAIAssistantClick}
                 className="block w-full text-left px-3 py-2 text-base font-medium text-charcoal-600 hover:text-mustard-400 hover:bg-mustard-100 rounded-lg transition-all duration-300 transform hover:translate-x-2"
               >
                 <div className="flex items-center">
-                  <Bot className="h-4 w-4 mr-2" />
+                  <MessageCircle className="h-4 w-4 mr-2" />
                   AI Assistant
                 </div>
               </button>
