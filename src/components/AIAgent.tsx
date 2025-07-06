@@ -36,6 +36,19 @@ const AIAgent: React.FC<AIAgentProps> = ({ isOpen, onClose }) => {
     scrollToBottom();
   }, [messages]);
 
+  // Prevent body scroll when modal is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
+
   const generateBotResponse = (userMessage: string): string => {
     const lowerMessage = userMessage.toLowerCase();
     
@@ -142,11 +155,14 @@ const AIAgent: React.FC<AIAgentProps> = ({ isOpen, onClose }) => {
   return (
     <>
       {/* Backdrop */}
-      <div className="fixed inset-0 bg-charcoal-800/50 backdrop-blur-sm z-50" onClick={onClose}></div>
+      <div 
+        className="fixed inset-0 bg-charcoal-800/50 backdrop-blur-sm z-50 animate-fade-in" 
+        onClick={onClose}
+      ></div>
       
-      {/* Modal */}
-      <div className={`fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 bg-surface-white rounded-2xl shadow-2xl border border-mustard-100 transition-all duration-500 ${
-        isMinimized ? 'w-80 h-16' : 'w-96 h-[500px]'
+      {/* Modal - Centered on Screen */}
+      <div className={`fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 bg-surface-white rounded-2xl shadow-2xl border border-mustard-100 transition-all duration-500 animate-scale-in ${
+        isMinimized ? 'w-80 h-16' : 'w-96 max-w-[90vw] h-[600px] max-h-[90vh]'
       }`}>
         {/* Header */}
         <div className="bg-mustard-gradient text-charcoal-800 p-4 rounded-t-2xl flex items-center justify-between">
@@ -155,7 +171,7 @@ const AIAgent: React.FC<AIAgentProps> = ({ isOpen, onClose }) => {
               <Bot className="h-5 w-5 text-charcoal-800" />
             </div>
             <div>
-              <h3 className="font-semibold">PR Group Assistant</h3>
+              <h3 className="font-semibold">PR Group AI Assistant</h3>
               <p className="text-xs text-charcoal-700">Online • Ready to help</p>
             </div>
           </div>
@@ -163,12 +179,14 @@ const AIAgent: React.FC<AIAgentProps> = ({ isOpen, onClose }) => {
             <button
               onClick={() => setIsMinimized(!isMinimized)}
               className="p-1 hover:bg-charcoal-800/20 rounded-full transition-colors"
+              title={isMinimized ? "Maximize" : "Minimize"}
             >
               {isMinimized ? <Maximize2 className="h-4 w-4" /> : <Minimize2 className="h-4 w-4" />}
             </button>
             <button
               onClick={onClose}
               className="p-1 hover:bg-charcoal-800/20 rounded-full transition-colors"
+              title="Close"
             >
               <X className="h-4 w-4" />
             </button>
@@ -178,11 +196,11 @@ const AIAgent: React.FC<AIAgentProps> = ({ isOpen, onClose }) => {
         {!isMinimized && (
           <>
             {/* Messages */}
-            <div className="h-80 overflow-y-auto p-4 space-y-4">
+            <div className="h-96 overflow-y-auto p-4 space-y-4 bg-gradient-to-b from-surface-white to-mustard-50">
               {messages.map((message) => (
                 <div
                   key={message.id}
-                  className={`flex ${message.isBot ? 'justify-start' : 'justify-end'}`}
+                  className={`flex ${message.isBot ? 'justify-start' : 'justify-end'} animate-fade-in-up`}
                 >
                   <div className={`flex items-start space-x-2 max-w-[80%] ${
                     message.isBot ? 'flex-row' : 'flex-row-reverse space-x-reverse'
@@ -194,14 +212,14 @@ const AIAgent: React.FC<AIAgentProps> = ({ isOpen, onClose }) => {
                     }`}>
                       {message.isBot ? <Bot className="h-4 w-4" /> : <User className="h-4 w-4" />}
                     </div>
-                    <div className={`rounded-2xl p-3 ${
+                    <div className={`rounded-2xl p-3 shadow-sm ${
                       message.isBot
-                        ? 'bg-mustard-100 text-charcoal-800'
+                        ? 'bg-surface-white text-charcoal-800 border border-mustard-100'
                         : 'bg-mustard-gradient text-charcoal-800'
                     }`}>
-                      <p className="text-sm">{message.text}</p>
+                      <p className="text-sm leading-relaxed">{message.text}</p>
                       <p className={`text-xs mt-1 ${
-                        message.isBot ? 'text-charcoal-600' : 'text-charcoal-700'
+                        message.isBot ? 'text-charcoal-500' : 'text-charcoal-600'
                       }`}>
                         {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                       </p>
@@ -211,16 +229,16 @@ const AIAgent: React.FC<AIAgentProps> = ({ isOpen, onClose }) => {
               ))}
               
               {isTyping && (
-                <div className="flex justify-start">
+                <div className="flex justify-start animate-fade-in">
                   <div className="flex items-start space-x-2">
                     <div className="w-8 h-8 rounded-full bg-mustard-gradient text-charcoal-800 flex items-center justify-center">
                       <Bot className="h-4 w-4" />
                     </div>
-                    <div className="bg-mustard-100 rounded-2xl p-3">
+                    <div className="bg-surface-white border border-mustard-100 rounded-2xl p-3 shadow-sm">
                       <div className="flex space-x-1">
-                        <div className="w-2 h-2 bg-charcoal-600 rounded-full animate-bounce"></div>
-                        <div className="w-2 h-2 bg-charcoal-600 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
-                        <div className="w-2 h-2 bg-charcoal-600 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+                        <div className="w-2 h-2 bg-mustard-400 rounded-full animate-bounce"></div>
+                        <div className="w-2 h-2 bg-mustard-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+                        <div className="w-2 h-2 bg-mustard-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
                       </div>
                     </div>
                   </div>
@@ -230,25 +248,25 @@ const AIAgent: React.FC<AIAgentProps> = ({ isOpen, onClose }) => {
             </div>
 
             {/* Quick Actions */}
-            <div className="px-4 py-2 border-t border-mustard-100">
+            <div className="px-4 py-3 border-t border-mustard-100 bg-surface-beige">
               <div className="flex space-x-2">
                 <button
                   onClick={() => handleContactAction('whatsapp')}
-                  className="flex-1 bg-charcoal-600 text-surface-white px-3 py-2 rounded-lg text-xs font-medium hover:bg-charcoal-700 transition-colors"
+                  className="flex-1 bg-charcoal-600 text-surface-white px-3 py-2 rounded-lg text-xs font-medium hover:bg-charcoal-700 transition-all duration-300 transform hover:scale-105"
                 >
-                  WhatsApp
+                  💬 WhatsApp
                 </button>
                 <button
                   onClick={() => handleContactAction('call')}
-                  className="flex-1 bg-mustard-400 text-charcoal-800 px-3 py-2 rounded-lg text-xs font-medium hover:bg-mustard-500 transition-colors"
+                  className="flex-1 bg-mustard-400 text-charcoal-800 px-3 py-2 rounded-lg text-xs font-medium hover:bg-mustard-500 transition-all duration-300 transform hover:scale-105"
                 >
-                  Call Now
+                  📞 Call Now
                 </button>
               </div>
             </div>
 
             {/* Input */}
-            <div className="p-4 border-t border-mustard-100">
+            <div className="p-4 border-t border-mustard-100 bg-surface-white rounded-b-2xl">
               <div className="flex space-x-2">
                 <input
                   type="text"
@@ -256,12 +274,12 @@ const AIAgent: React.FC<AIAgentProps> = ({ isOpen, onClose }) => {
                   onChange={(e) => setInputText(e.target.value)}
                   onKeyPress={handleKeyPress}
                   placeholder="Type your message..."
-                  className="flex-1 border border-mustard-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-mustard-400 focus:border-transparent"
+                  className="flex-1 border border-mustard-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-mustard-400 focus:border-transparent transition-all duration-300"
                 />
                 <button
                   onClick={handleSendMessage}
                   disabled={!inputText.trim()}
-                  className="bg-mustard-gradient text-charcoal-800 p-2 rounded-lg hover:shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="bg-mustard-gradient text-charcoal-800 p-2 rounded-lg hover:shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed transform hover:scale-105"
                 >
                   <Send className="h-4 w-4" />
                 </button>

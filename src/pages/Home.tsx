@@ -124,7 +124,7 @@ const Home: React.FC<HomeProps> = ({ onAIAssistantClick }) => {
               </div>
             </div>
 
-            {/* Professional Avatar */}
+            {/* Professional Avatar - Replaced Side Image */}
             <div className="animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
               <div className="bg-surface-white rounded-2xl shadow-xl border border-mustard-100 p-8 text-center">
                 <div className="bg-mustard-gradient rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-6">
