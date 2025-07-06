@@ -64,14 +64,14 @@ const Hero: React.FC = () => {
           }`}>
             <h1 className="text-6xl md:text-8xl font-bold text-charcoal-800 mb-6 leading-tight">
               <span className="inline-block animate-fade-in-up">PR</span>
-              <span className="inline-block animate-fade-in-up text-mustard-300" style={{ animationDelay: '0.2s' }}> Group</span>
+              <span className="inline-block animate-fade-in-up text-charcoal-800 drop-shadow-lg" style={{ animationDelay: '0.2s' }}> Group</span>
             </h1>
           </div>
           
           <div className={`transform transition-all duration-1000 delay-300 ${
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
           }`}>
-            <p className="text-xl md:text-2xl text-charcoal-700 mb-8 max-w-3xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+            <p className="text-xl md:text-2xl text-charcoal-700 mb-8 max-w-3xl mx-auto animate-fade-in-up drop-shadow-md" style={{ animationDelay: '0.4s' }}>
               Build Smart. Live Beautiful. Choose Excellence.
             </p>
           </div>
@@ -79,7 +79,7 @@ const Hero: React.FC = () => {
           <div className={`transform transition-all duration-1000 delay-500 ${
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
           }`}>
-            <p className="text-lg text-charcoal-600 mb-12 max-w-2xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
+            <p className="text-lg text-charcoal-600 mb-12 max-w-2xl mx-auto animate-fade-in-up drop-shadow-sm" style={{ animationDelay: '0.6s' }}>
               Transform your vision into reality with our expert construction, interior design, and renovation services across Visakhapatnam, Srikakulam, and Vizianagaram.
             </p>
           </div>
@@ -118,7 +118,7 @@ const Hero: React.FC = () => {
           <div className={`transform transition-all duration-1000 delay-1000 ${
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
           }`}>
-            <p className="text-sm text-charcoal-600 mt-8 animate-pulse-soft">
+            <p className="text-sm text-charcoal-600 mt-8 animate-pulse-soft drop-shadow-sm">
               Your dream space is one click away.
             </p>
           </div>
