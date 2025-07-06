@@ -5,7 +5,11 @@ import ServiceCard from '../components/ServiceCard';
 import NavigationLink from '../components/NavigationLink';
 import { SERVICES, PORTFOLIO_PROJECTS, CONTACT_INFO } from '../utils/constants';
 
-const Home: React.FC = () => {
+interface HomeProps {
+  onAIAssistantClick?: () => void;
+}
+
+const Home: React.FC<HomeProps> = ({ onAIAssistantClick }) => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -27,18 +31,7 @@ const Home: React.FC = () => {
   }, []);
 
   const handleChatClick = () => {
-    // Find the AI agent component and trigger its open state
-    const aiAgentButton = document.querySelector('[title="Chat with our assistant"]') as HTMLButtonElement;
-    if (aiAgentButton) {
-      aiAgentButton.click();
-      // Scroll to keep the chat visible but not at the very bottom
-      setTimeout(() => {
-        window.scrollBy({
-          top: -200,
-          behavior: 'smooth'
-        });
-      }, 100);
-    }
+    onAIAssistantClick?.();
   };
 
   const handleWhatsAppClick = () => {
@@ -51,23 +44,23 @@ const Home: React.FC = () => {
       <Hero />
       
       {/* AI Agent Section */}
-      <section className="py-16 bg-gradient-to-br from-pastel-blue-light via-white to-pastel-purple-light relative overflow-hidden">
+      <section className="py-16 bg-gradient-to-br from-mustard-100 via-surface-white to-surface-beige relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23F4C542' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
           }}></div>
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 animate-fade-in-up">
             <div className="flex items-center justify-center mb-4">
-              <div className="bg-gradient-to-r from-pastel-blue-dark to-pastel-purple-dark rounded-full p-3 mr-4">
-                <Bot className="h-8 w-8 text-white" />
+              <div className="bg-mustard-gradient rounded-full p-3 mr-4">
+                <Bot className="h-8 w-8 text-charcoal-800" />
               </div>
-              <h2 className="text-4xl font-bold text-gray-900">Meet Your Smart Assistant</h2>
+              <h2 className="text-4xl font-bold text-charcoal-800">Meet Your Smart Assistant</h2>
             </div>
-            <p className="text-xl text-pastel-gray-dark max-w-3xl mx-auto">
+            <p className="text-xl text-charcoal-600 max-w-3xl mx-auto">
               Get instant answers about construction, interior design, and renovation projects. Our intelligent assistant is available 24/7 to help you plan your dream space.
             </p>
           </div>
@@ -76,32 +69,32 @@ const Home: React.FC = () => {
             {/* Features */}
             <div className="space-y-6 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
               <div className="flex items-start space-x-4 group">
-                <div className="bg-pastel-blue/20 rounded-full p-3 group-hover:bg-pastel-blue/30 transition-colors duration-300">
-                  <Zap className="h-6 w-6 text-pastel-blue-dark" />
+                <div className="bg-mustard-200/50 rounded-full p-3 group-hover:bg-mustard-300/50 transition-colors duration-300">
+                  <Zap className="h-6 w-6 text-mustard-400" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Instant Responses</h3>
-                  <p className="text-pastel-gray-dark">Get immediate answers to your construction and design questions, available round the clock.</p>
+                  <h3 className="text-xl font-semibold text-charcoal-800 mb-2">Instant Responses</h3>
+                  <p className="text-charcoal-600">Get immediate answers to your construction and design questions, available round the clock.</p>
                 </div>
               </div>
 
               <div className="flex items-start space-x-4 group">
-                <div className="bg-pastel-green/20 rounded-full p-3 group-hover:bg-pastel-green/30 transition-colors duration-300">
-                  <MessageCircle className="h-6 w-6 text-pastel-green-dark" />
+                <div className="bg-charcoal-200/50 rounded-full p-3 group-hover:bg-charcoal-300/50 transition-colors duration-300">
+                  <MessageCircle className="h-6 w-6 text-charcoal-600" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Expert Guidance</h3>
-                  <p className="text-pastel-gray-dark">Receive professional advice on project planning, material selection, and design choices.</p>
+                  <h3 className="text-xl font-semibold text-charcoal-800 mb-2">Expert Guidance</h3>
+                  <p className="text-charcoal-600">Receive professional advice on project planning, material selection, and design choices.</p>
                 </div>
               </div>
 
               <div className="flex items-start space-x-4 group">
-                <div className="bg-pastel-purple/20 rounded-full p-3 group-hover:bg-pastel-purple/30 transition-colors duration-300">
-                  <Phone className="h-6 w-6 text-pastel-purple-dark" />
+                <div className="bg-mustard-200/50 rounded-full p-3 group-hover:bg-mustard-300/50 transition-colors duration-300">
+                  <Phone className="h-6 w-6 text-mustard-400" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Seamless Connection</h3>
-                  <p className="text-pastel-gray-dark">Easily connect with our team via WhatsApp or phone for detailed consultations.</p>
+                  <h3 className="text-xl font-semibold text-charcoal-800 mb-2">Seamless Connection</h3>
+                  <p className="text-charcoal-600">Easily connect with our team via WhatsApp or phone for detailed consultations.</p>
                 </div>
               </div>
 
@@ -109,7 +102,7 @@ const Home: React.FC = () => {
                 <div className="flex flex-col sm:flex-row gap-4">
                   <button
                     onClick={handleChatClick}
-                    className="group bg-gradient-to-r from-pastel-blue-dark to-pastel-purple-dark text-white px-6 py-3 rounded-full font-semibold transition-all duration-500 transform hover:scale-105 hover:shadow-xl"
+                    className="group bg-mustard-gradient text-charcoal-800 px-6 py-3 rounded-full font-semibold transition-all duration-500 transform hover:scale-105 hover:shadow-xl"
                   >
                     <span className="flex items-center justify-center">
                       <Bot className="h-5 w-5 mr-2 group-hover:animate-wiggle" />
@@ -120,7 +113,7 @@ const Home: React.FC = () => {
                   
                   <button
                     onClick={handleWhatsAppClick}
-                    className="group bg-gradient-to-r from-pastel-green-dark to-pastel-blue-dark text-white px-6 py-3 rounded-full font-semibold transition-all duration-500 transform hover:scale-105 hover:shadow-xl"
+                    className="group bg-charcoal-600 hover:bg-charcoal-700 text-surface-white px-6 py-3 rounded-full font-semibold transition-all duration-500 transform hover:scale-105 hover:shadow-xl"
                   >
                     <span className="flex items-center justify-center">
                       <MessageCircle className="h-5 w-5 mr-2 group-hover:animate-pulse-soft" />
@@ -131,57 +124,19 @@ const Home: React.FC = () => {
               </div>
             </div>
 
-            {/* Chat Preview */}
+            {/* Professional Avatar */}
             <div className="animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-              <div className="bg-white rounded-2xl shadow-xl border border-pastel-blue/20 overflow-hidden">
-                {/* Chat Header */}
-                <div className="bg-gradient-to-r from-pastel-blue-dark to-pastel-purple-dark text-white p-4">
-                  <div className="flex items-center space-x-3">
-                    <div className="bg-white/20 rounded-full p-2">
-                      <MessageCircle className="h-5 w-5" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold">PR Group Assistant</h3>
-                      <p className="text-xs text-white/80">Online • Ready to help</p>
-                    </div>
-                  </div>
+              <div className="bg-surface-white rounded-2xl shadow-xl border border-mustard-100 p-8 text-center">
+                <div className="bg-mustard-gradient rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-6">
+                  <Bot className="h-12 w-12 text-charcoal-800" />
                 </div>
-
-                {/* Sample Messages */}
-                <div className="p-4 space-y-4 h-64 overflow-hidden">
-                  <div className="flex justify-start">
-                    <div className="flex items-start space-x-2 max-w-[80%]">
-                      <div className="w-8 h-8 rounded-full bg-gradient-to-r from-pastel-blue-dark to-pastel-purple-dark text-white flex items-center justify-center">
-                        <MessageCircle className="h-4 w-4" />
-                      </div>
-                      <div className="bg-pastel-blue text-pastel-blue-dark rounded-2xl p-3">
-                        <p className="text-sm">Hi! I'm your PR Group assistant. How can I help you with your construction or interior design project today?</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="flex justify-end">
-                    <div className="bg-gradient-to-r from-pastel-blue-dark to-pastel-purple-dark text-white rounded-2xl p-3 max-w-[80%]">
-                      <p className="text-sm">I'm interested in a modular kitchen design. Can you help?</p>
-                    </div>
-                  </div>
-
-                  <div className="flex justify-start">
-                    <div className="flex items-start space-x-2 max-w-[80%]">
-                      <div className="w-8 h-8 rounded-full bg-gradient-to-r from-pastel-blue-dark to-pastel-purple-dark text-white flex items-center justify-center">
-                        <MessageCircle className="h-4 w-4" />
-                      </div>
-                      <div className="bg-pastel-blue text-pastel-blue-dark rounded-2xl p-3">
-                        <p className="text-sm">Absolutely! We specialize in modular kitchen designs with smart storage solutions and premium finishes. Would you like to see our portfolio or discuss your requirements?</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="flex justify-center">
-                    <div className="bg-pastel-gray/50 text-pastel-gray-dark px-4 py-2 rounded-full text-xs">
-                      Start your conversation...
-                    </div>
-                  </div>
+                <h3 className="text-2xl font-bold text-charcoal-800 mb-4">AI Construction Assistant</h3>
+                <p className="text-charcoal-600 mb-6">
+                  Your intelligent guide for construction, interior design, and renovation projects. Get expert advice, quotes, and project guidance instantly.
+                </p>
+                <div className="flex items-center justify-center space-x-2 text-sm text-charcoal-500">
+                  <div className="w-2 h-2 bg-mustard-400 rounded-full animate-pulse"></div>
+                  <span>Online & Ready to Help</span>
                 </div>
               </div>
             </div>
@@ -190,32 +145,32 @@ const Home: React.FC = () => {
       </section>
       
       {/* About Section */}
-      <section className="py-20 bg-gradient-to-br from-pastel-blue-light via-white to-pastel-purple-light animate-on-scroll">
+      <section className="py-20 bg-gradient-to-br from-surface-beige via-surface-white to-mustard-100 animate-on-scroll">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 animate-fade-in-up">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Choose PR Group?</h2>
-            <p className="text-xl text-pastel-gray-dark max-w-3xl mx-auto">
+            <h2 className="text-4xl font-bold text-charcoal-800 mb-4">Why Choose PR Group?</h2>
+            <p className="text-xl text-charcoal-600 max-w-3xl mx-auto">
               We combine precision craftsmanship with innovative design to deliver exceptional results that exceed expectations.
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { icon: Award, title: 'Expert Craftsmanship', description: 'Years of experience in construction and design', color: 'pastel-blue' },
-              { icon: Users, title: 'Dedicated Team', description: 'Skilled professionals committed to excellence', color: 'pastel-green' },
-              { icon: Clock, title: 'Timely Delivery', description: 'Projects completed on schedule, every time', color: 'pastel-purple' },
-              { icon: CheckCircle, title: 'Quality Assured', description: 'Premium materials and superior finishes', color: 'pastel-pink' },
+              { icon: Award, title: 'Expert Craftsmanship', description: 'Years of experience in construction and design', color: 'mustard' },
+              { icon: Users, title: 'Dedicated Team', description: 'Skilled professionals committed to excellence', color: 'charcoal' },
+              { icon: Clock, title: 'Timely Delivery', description: 'Projects completed on schedule, every time', color: 'mustard' },
+              { icon: CheckCircle, title: 'Quality Assured', description: 'Premium materials and superior finishes', color: 'charcoal' },
             ].map((item, index) => (
               <div 
                 key={index} 
                 className="text-center group animate-fade-in-up hover:transform hover:scale-105 transition-all duration-500"
                 style={{ animationDelay: `${index * 200}ms` }}
               >
-                <div className={`bg-${item.color}/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 group-hover:bg-${item.color}/30 transition-all duration-500 group-hover:scale-110 group-hover:rotate-12`}>
-                  <item.icon className={`h-8 w-8 text-${item.color}-dark group-hover:animate-wiggle`} />
+                <div className={`${item.color === 'mustard' ? 'bg-mustard-200' : 'bg-charcoal-200'} rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 group-hover:${item.color === 'mustard' ? 'bg-mustard-300' : 'bg-charcoal-300'} transition-all duration-500 group-hover:scale-110 group-hover:rotate-12`}>
+                  <item.icon className={`h-8 w-8 ${item.color === 'mustard' ? 'text-mustard-400' : 'text-charcoal-600'} group-hover:animate-wiggle`} />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-pastel-blue-dark transition-colors duration-300">{item.title}</h3>
-                <p className="text-pastel-gray-dark">{item.description}</p>
+                <h3 className="text-xl font-semibold text-charcoal-800 mb-2 group-hover:text-mustard-400 transition-colors duration-300">{item.title}</h3>
+                <p className="text-charcoal-600">{item.description}</p>
               </div>
             ))}
           </div>
@@ -223,11 +178,11 @@ const Home: React.FC = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 bg-gradient-to-br from-white via-pastel-green-light to-pastel-blue-light animate-on-scroll">
+      <section className="py-20 bg-gradient-to-br from-surface-white via-mustard-50 to-surface-beige animate-on-scroll">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 animate-fade-in-up">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Services</h2>
-            <p className="text-xl text-pastel-gray-dark">
+            <h2 className="text-4xl font-bold text-charcoal-800 mb-4">Our Services</h2>
+            <p className="text-xl text-charcoal-600">
               Complete solutions for all your construction and design needs
             </p>
           </div>
@@ -253,11 +208,11 @@ const Home: React.FC = () => {
       </section>
 
       {/* Featured Projects */}
-      <section className="py-20 bg-gradient-to-br from-pastel-purple-light via-white to-pastel-pink-light animate-on-scroll">
+      <section className="py-20 bg-gradient-to-br from-mustard-100 via-surface-white to-surface-beige animate-on-scroll">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 animate-fade-in-up">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Featured Projects</h2>
-            <p className="text-xl text-pastel-gray-dark">
+            <h2 className="text-4xl font-bold text-charcoal-800 mb-4">Featured Projects</h2>
+            <p className="text-xl text-charcoal-600">
               See how we've transformed spaces across Andhra Pradesh
             </p>
           </div>
@@ -266,7 +221,7 @@ const Home: React.FC = () => {
             {PORTFOLIO_PROJECTS.map((project, index) => (
               <div 
                 key={project.id} 
-                className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:scale-105 border border-pastel-blue/20 animate-fade-in-up group h-full"
+                className="bg-surface-white/80 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:scale-105 border border-mustard-100 animate-fade-in-up group h-full"
                 style={{ animationDelay: `${index * 200}ms` }}
               >
                 <div className="relative h-48 overflow-hidden">
@@ -275,15 +230,15 @@ const Home: React.FC = () => {
                     alt={project.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
-                  <div className="absolute top-4 left-4 bg-gradient-to-r from-pastel-blue-dark to-pastel-purple-dark text-white px-3 py-1 rounded-full text-sm font-medium animate-pulse-soft">
+                  <div className="absolute top-4 left-4 bg-mustard-gradient text-charcoal-800 px-3 py-1 rounded-full text-sm font-medium animate-pulse-soft">
                     {project.type}
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal-800/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
                 <div className="p-6 flex-1 flex flex-col">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-pastel-blue-dark transition-colors duration-300">{project.title}</h3>
-                  <p className="text-pastel-gray-dark mb-2">{project.location}</p>
-                  <p className="text-gray-700 text-sm flex-1">{project.description}</p>
+                  <h3 className="text-xl font-bold text-charcoal-800 mb-2 group-hover:text-mustard-400 transition-colors duration-300">{project.title}</h3>
+                  <p className="text-charcoal-600 mb-2">{project.location}</p>
+                  <p className="text-charcoal-700 text-sm flex-1">{project.description}</p>
                 </div>
               </div>
             ))}
@@ -292,7 +247,7 @@ const Home: React.FC = () => {
           <div className="text-center mt-12 animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
             <NavigationLink
               to="/portfolio"
-              className="group inline-flex items-center bg-gradient-to-r from-pastel-blue-dark to-pastel-purple-dark hover:from-pastel-purple-dark hover:to-pastel-pink-dark text-white px-8 py-3 rounded-full font-semibold transition-all duration-500 transform hover:scale-110 hover:shadow-2xl"
+              className="group inline-flex items-center bg-mustard-gradient hover:shadow-2xl text-charcoal-800 px-8 py-3 rounded-full font-semibold transition-all duration-500 transform hover:scale-110"
             >
               View All Projects
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-2 transition-transform duration-300" />
@@ -302,34 +257,34 @@ const Home: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-pastel-blue-dark via-pastel-purple-dark to-pastel-pink-dark relative overflow-hidden">
+      <section className="py-20 bg-mustard-gradient relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.3'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.3'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
           }}></div>
         </div>
 
         {/* Floating Elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-20 left-10 w-20 h-20 bg-white/10 rounded-full animate-float"></div>
-          <div className="absolute top-40 right-20 w-16 h-16 bg-white/10 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
-          <div className="absolute bottom-40 left-20 w-12 h-12 bg-white/10 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute top-20 left-10 w-20 h-20 bg-charcoal-800/10 rounded-full animate-float"></div>
+          <div className="absolute top-40 right-20 w-16 h-16 bg-charcoal-800/10 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute bottom-40 left-20 w-12 h-12 bg-charcoal-800/10 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="animate-fade-in-up">
-            <h2 className="text-4xl font-bold text-white mb-4">
+            <h2 className="text-4xl font-bold text-charcoal-800 mb-4">
               Ready to Start Your Project?
             </h2>
-            <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-charcoal-700 mb-8 max-w-2xl mx-auto">
               Let's discuss how we can bring your vision to life with our expert construction and design services.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <NavigationLink
                 to="tel:8886663807"
                 external
-                className="group bg-white text-pastel-blue-dark hover:bg-pastel-blue-light px-8 py-3 rounded-full font-semibold transition-all duration-500 transform hover:scale-110 hover:shadow-2xl"
+                className="group bg-surface-white text-charcoal-800 hover:bg-surface-beige px-8 py-3 rounded-full font-semibold transition-all duration-500 transform hover:scale-110 hover:shadow-2xl"
               >
                 <span className="flex items-center justify-center">
                   <Phone className="h-5 w-5 mr-2 group-hover:animate-wiggle" />
@@ -338,7 +293,7 @@ const Home: React.FC = () => {
               </NavigationLink>
               <NavigationLink
                 to="/contact"
-                className="group bg-gradient-to-r from-pastel-orange-dark to-pastel-pink-dark hover:from-pastel-pink-dark hover:to-pastel-orange-dark text-white px-8 py-3 rounded-full font-semibold transition-all duration-500 transform hover:scale-110 hover:shadow-2xl"
+                className="group bg-charcoal-600 hover:bg-charcoal-700 text-surface-white px-8 py-3 rounded-full font-semibold transition-all duration-500 transform hover:scale-110 hover:shadow-2xl"
               >
                 <span className="flex items-center justify-center">
                   Get Free Consultation

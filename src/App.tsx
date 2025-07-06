@@ -114,13 +114,22 @@ const createDesignIdeaPage = (ideaId: string, ideaName: string) => {
 // App Content Component with Page Transition
 const AppContent: React.FC = () => {
   const { isLoading } = usePageTransition();
+  const [isAIAgentOpen, setIsAIAgentOpen] = useState(false);
+
+  const handleAIAssistantClick = () => {
+    setIsAIAgentOpen(true);
+  };
+
+  const handleAIAgentClose = () => {
+    setIsAIAgentOpen(false);
+  };
 
   return (
     <PageTransition isLoading={isLoading}>
-      <Header />
+      <Header onAIAssistantClick={handleAIAssistantClick} />
       <main>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home onAIAssistantClick={handleAIAssistantClick} />} />
           
           {/* Services Routes */}
           <Route path="/services/construction" element={<Construction />} />
@@ -144,7 +153,7 @@ const AppContent: React.FC = () => {
       </main>
       <Footer />
       <StickyWidgets />
-      <AIAgent />
+      <AIAgent isOpen={isAIAgentOpen} onClose={handleAIAgentClose} />
     </PageTransition>
   );
 };

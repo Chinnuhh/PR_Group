@@ -4,26 +4,64 @@ export default {
   theme: {
     extend: {
       colors: {
+        // Mustard Yellow Theme
+        mustard: {
+          50: '#FAF7F0',
+          100: '#F5EFD7',
+          200: '#FFDD57',
+          300: '#F4C542',
+          400: '#E0A800',
+          500: '#D49C00',
+          600: '#B8860B',
+          700: '#9A7209',
+          800: '#7D5E07',
+          900: '#654A05',
+        },
+        // Text and Contrast Colors
+        charcoal: {
+          50: '#F8F8F8',
+          100: '#E8E8E8',
+          200: '#D1D1D1',
+          300: '#B4B4B4',
+          400: '#999999',
+          500: '#4B4B4B',
+          600: '#333333',
+          700: '#2A2A2A',
+          800: '#1A1A1A',
+          900: '#0F0F0F',
+        },
+        // Surface and Background
+        surface: {
+          light: '#FAF7F0',
+          white: '#FFFFFF',
+          beige: '#F5EFD7',
+        },
+        // Legacy pastel colors (keeping for backward compatibility but will replace)
         pastel: {
           blue: '#E0F2FE',
           'blue-light': '#F0F9FF',
-          'blue-dark': '#0EA5E9',
+          'blue-dark': '#F4C542', // Replace with mustard
           pink: '#FCE7F3',
           'pink-light': '#FDF2F8',
-          'pink-dark': '#EC4899',
+          'pink-dark': '#E0A800', // Replace with darker mustard
           green: '#ECFDF5',
           'green-light': '#F0FDF4',
-          'green-dark': '#10B981',
+          'green-dark': '#F4C542', // Replace with mustard
           purple: '#F3E8FF',
           'purple-light': '#FAF5FF',
-          'purple-dark': '#8B5CF6',
+          'purple-dark': '#E0A800', // Replace with darker mustard
           orange: '#FFF7ED',
           'orange-light': '#FFFBEB',
-          'orange-dark': '#F97316',
+          'orange-dark': '#F4C542', // Replace with mustard
           gray: '#F8FAFC',
           'gray-light': '#FCFCFD',
-          'gray-dark': '#64748B',
+          'gray-dark': '#4B4B4B', // Replace with warm charcoal
         }
+      },
+      backgroundImage: {
+        'mustard-gradient': 'linear-gradient(135deg, #F4C542, #E0A800)',
+        'mustard-gradient-soft': 'linear-gradient(to right, #F4C542, #FFDD57)',
+        'hero-gradient': 'linear-gradient(135deg, rgba(244, 197, 66, 0.9), rgba(224, 168, 0, 0.8))',
       },
       animation: {
         'fade-in': 'fadeIn 0.6s ease-out',

@@ -11,7 +11,7 @@ const PageTransition: React.FC<PageTransitionProps> = ({ isLoading, children }) 
       {/* Top Loading Bar */}
       {isLoading && (
         <div className="fixed top-0 left-0 w-full h-1 bg-gray-200 z-[9999]">
-          <div className="h-full bg-gradient-to-r from-pastel-blue-dark via-pastel-purple-dark to-pastel-pink-dark animate-loading-bar"></div>
+          <div className="h-full bg-mustard-gradient animate-loading-bar"></div>
         </div>
       )}
       

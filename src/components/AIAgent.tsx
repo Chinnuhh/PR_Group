@@ -9,8 +9,12 @@ interface Message {
   timestamp: Date;
 }
 
-const AIAgent: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
+interface AIAgentProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+const AIAgent: React.FC<AIAgentProps> = ({ isOpen, onClose }) => {
   const [isMinimized, setIsMinimized] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
     {
@@ -133,146 +137,140 @@ const AIAgent: React.FC = () => {
     }
   };
 
-  if (!isOpen) {
-    return (
-      <button
-        onClick={() => setIsOpen(true)}
-        className="fixed bottom-[180px] right-6 z-50 bg-gradient-to-r from-pastel-blue-dark to-pastel-purple-dark text-white p-4 rounded-full shadow-xl transition-all duration-500 transform hover:scale-110 hover:shadow-2xl animate-float group"
-        title="Chat with our assistant"
-      >
-        <div className="absolute inset-0 bg-gradient-to-r from-pastel-purple-dark to-pastel-pink-dark opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full"></div>
-        <MessageCircle className="h-6 w-6 relative z-10 group-hover:animate-wiggle" />
-        <div className="absolute inset-0 rounded-full bg-pastel-blue-dark/30 animate-ping"></div>
-      </button>
-    );
-  }
+  if (!isOpen) return null;
 
   return (
-    <div className={`fixed bottom-6 right-6 z-50 bg-white rounded-2xl shadow-2xl border border-pastel-blue/20 transition-all duration-500 ${
-      isMinimized ? 'w-80 h-16' : 'w-96 h-[500px]'
-    }`}>
-      {/* Header */}
-      <div className="bg-gradient-to-r from-pastel-blue-dark to-pastel-purple-dark text-white p-4 rounded-t-2xl flex items-center justify-between">
-        <div className="flex items-center space-x-3">
-          <div className="bg-white/20 rounded-full p-2">
-            <MessageCircle className="h-5 w-5" />
+    <>
+      {/* Backdrop */}
+      <div className="fixed inset-0 bg-charcoal-800/50 backdrop-blur-sm z-50" onClick={onClose}></div>
+      
+      {/* Modal */}
+      <div className={`fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 bg-surface-white rounded-2xl shadow-2xl border border-mustard-100 transition-all duration-500 ${
+        isMinimized ? 'w-80 h-16' : 'w-96 h-[500px]'
+      }`}>
+        {/* Header */}
+        <div className="bg-mustard-gradient text-charcoal-800 p-4 rounded-t-2xl flex items-center justify-between">
+          <div className="flex items-center space-x-3">
+            <div className="bg-charcoal-800/20 rounded-full p-2">
+              <Bot className="h-5 w-5 text-charcoal-800" />
+            </div>
+            <div>
+              <h3 className="font-semibold">PR Group Assistant</h3>
+              <p className="text-xs text-charcoal-700">Online • Ready to help</p>
+            </div>
           </div>
-          <div>
-            <h3 className="font-semibold">PR Group Assistant</h3>
-            <p className="text-xs text-white/80">Online • Ready to help</p>
+          <div className="flex items-center space-x-2">
+            <button
+              onClick={() => setIsMinimized(!isMinimized)}
+              className="p-1 hover:bg-charcoal-800/20 rounded-full transition-colors"
+            >
+              {isMinimized ? <Maximize2 className="h-4 w-4" /> : <Minimize2 className="h-4 w-4" />}
+            </button>
+            <button
+              onClick={onClose}
+              className="p-1 hover:bg-charcoal-800/20 rounded-full transition-colors"
+            >
+              <X className="h-4 w-4" />
+            </button>
           </div>
         </div>
-        <div className="flex items-center space-x-2">
-          <button
-            onClick={() => setIsMinimized(!isMinimized)}
-            className="p-1 hover:bg-white/20 rounded-full transition-colors"
-          >
-            {isMinimized ? <Maximize2 className="h-4 w-4" /> : <Minimize2 className="h-4 w-4" />}
-          </button>
-          <button
-            onClick={() => setIsOpen(false)}
-            className="p-1 hover:bg-white/20 rounded-full transition-colors"
-          >
-            <X className="h-4 w-4" />
-          </button>
-        </div>
-      </div>
 
-      {!isMinimized && (
-        <>
-          {/* Messages */}
-          <div className="h-80 overflow-y-auto p-4 space-y-4">
-            {messages.map((message) => (
-              <div
-                key={message.id}
-                className={`flex ${message.isBot ? 'justify-start' : 'justify-end'}`}
-              >
-                <div className={`flex items-start space-x-2 max-w-[80%] ${
-                  message.isBot ? 'flex-row' : 'flex-row-reverse space-x-reverse'
-                }`}>
-                  <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${
-                    message.isBot 
-                      ? 'bg-gradient-to-r from-pastel-blue-dark to-pastel-purple-dark text-white' 
-                      : 'bg-pastel-gray text-pastel-gray-dark'
+        {!isMinimized && (
+          <>
+            {/* Messages */}
+            <div className="h-80 overflow-y-auto p-4 space-y-4">
+              {messages.map((message) => (
+                <div
+                  key={message.id}
+                  className={`flex ${message.isBot ? 'justify-start' : 'justify-end'}`}
+                >
+                  <div className={`flex items-start space-x-2 max-w-[80%] ${
+                    message.isBot ? 'flex-row' : 'flex-row-reverse space-x-reverse'
                   }`}>
-                    {message.isBot ? <MessageCircle className="h-4 w-4" /> : <User className="h-4 w-4" />}
-                  </div>
-                  <div className={`rounded-2xl p-3 ${
-                    message.isBot
-                      ? 'bg-pastel-blue text-pastel-blue-dark'
-                      : 'bg-gradient-to-r from-pastel-blue-dark to-pastel-purple-dark text-white'
-                  }`}>
-                    <p className="text-sm">{message.text}</p>
-                    <p className={`text-xs mt-1 ${
-                      message.isBot ? 'text-pastel-blue-dark/70' : 'text-white/70'
+                    <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${
+                      message.isBot 
+                        ? 'bg-mustard-gradient text-charcoal-800' 
+                        : 'bg-charcoal-100 text-charcoal-600'
                     }`}>
-                      {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
-            
-            {isTyping && (
-              <div className="flex justify-start">
-                <div className="flex items-start space-x-2">
-                  <div className="w-8 h-8 rounded-full bg-gradient-to-r from-pastel-blue-dark to-pastel-purple-dark text-white flex items-center justify-center">
-                    <MessageCircle className="h-4 w-4" />
-                  </div>
-                  <div className="bg-pastel-blue rounded-2xl p-3">
-                    <div className="flex space-x-1">
-                      <div className="w-2 h-2 bg-pastel-blue-dark rounded-full animate-bounce"></div>
-                      <div className="w-2 h-2 bg-pastel-blue-dark rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
-                      <div className="w-2 h-2 bg-pastel-blue-dark rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+                      {message.isBot ? <Bot className="h-4 w-4" /> : <User className="h-4 w-4" />}
+                    </div>
+                    <div className={`rounded-2xl p-3 ${
+                      message.isBot
+                        ? 'bg-mustard-100 text-charcoal-800'
+                        : 'bg-mustard-gradient text-charcoal-800'
+                    }`}>
+                      <p className="text-sm">{message.text}</p>
+                      <p className={`text-xs mt-1 ${
+                        message.isBot ? 'text-charcoal-600' : 'text-charcoal-700'
+                      }`}>
+                        {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                      </p>
                     </div>
                   </div>
                 </div>
+              ))}
+              
+              {isTyping && (
+                <div className="flex justify-start">
+                  <div className="flex items-start space-x-2">
+                    <div className="w-8 h-8 rounded-full bg-mustard-gradient text-charcoal-800 flex items-center justify-center">
+                      <Bot className="h-4 w-4" />
+                    </div>
+                    <div className="bg-mustard-100 rounded-2xl p-3">
+                      <div className="flex space-x-1">
+                        <div className="w-2 h-2 bg-charcoal-600 rounded-full animate-bounce"></div>
+                        <div className="w-2 h-2 bg-charcoal-600 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+                        <div className="w-2 h-2 bg-charcoal-600 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+              <div ref={messagesEndRef} />
+            </div>
+
+            {/* Quick Actions */}
+            <div className="px-4 py-2 border-t border-mustard-100">
+              <div className="flex space-x-2">
+                <button
+                  onClick={() => handleContactAction('whatsapp')}
+                  className="flex-1 bg-charcoal-600 text-surface-white px-3 py-2 rounded-lg text-xs font-medium hover:bg-charcoal-700 transition-colors"
+                >
+                  WhatsApp
+                </button>
+                <button
+                  onClick={() => handleContactAction('call')}
+                  className="flex-1 bg-mustard-400 text-charcoal-800 px-3 py-2 rounded-lg text-xs font-medium hover:bg-mustard-500 transition-colors"
+                >
+                  Call Now
+                </button>
               </div>
-            )}
-            <div ref={messagesEndRef} />
-          </div>
-
-          {/* Quick Actions */}
-          <div className="px-4 py-2 border-t border-pastel-blue/20">
-            <div className="flex space-x-2">
-              <button
-                onClick={() => handleContactAction('whatsapp')}
-                className="flex-1 bg-pastel-green-dark text-white px-3 py-2 rounded-lg text-xs font-medium hover:bg-pastel-green-dark/90 transition-colors"
-              >
-                WhatsApp
-              </button>
-              <button
-                onClick={() => handleContactAction('call')}
-                className="flex-1 bg-pastel-blue-dark text-white px-3 py-2 rounded-lg text-xs font-medium hover:bg-pastel-blue-dark/90 transition-colors"
-              >
-                Call Now
-              </button>
             </div>
-          </div>
 
-          {/* Input */}
-          <div className="p-4 border-t border-pastel-blue/20">
-            <div className="flex space-x-2">
-              <input
-                type="text"
-                value={inputText}
-                onChange={(e) => setInputText(e.target.value)}
-                onKeyPress={handleKeyPress}
-                placeholder="Type your message..."
-                className="flex-1 border border-pastel-blue/30 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-pastel-blue-dark focus:border-transparent"
-              />
-              <button
-                onClick={handleSendMessage}
-                disabled={!inputText.trim()}
-                className="bg-gradient-to-r from-pastel-blue-dark to-pastel-purple-dark text-white p-2 rounded-lg hover:shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                <Send className="h-4 w-4" />
-              </button>
+            {/* Input */}
+            <div className="p-4 border-t border-mustard-100">
+              <div className="flex space-x-2">
+                <input
+                  type="text"
+                  value={inputText}
+                  onChange={(e) => setInputText(e.target.value)}
+                  onKeyPress={handleKeyPress}
+                  placeholder="Type your message..."
+                  className="flex-1 border border-mustard-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-mustard-400 focus:border-transparent"
+                />
+                <button
+                  onClick={handleSendMessage}
+                  disabled={!inputText.trim()}
+                  className="bg-mustard-gradient text-charcoal-800 p-2 rounded-lg hover:shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  <Send className="h-4 w-4" />
+                </button>
+              </div>
             </div>
-          </div>
-        </>
-      )}
-    </div>
+          </>
+        )}
+      </div>
+    </>
   );
 };
 
