@@ -27,7 +27,7 @@ const InteriorDesign: React.FC = () => {
         {/* Hero Image */}
         <div className="mb-12 rounded-xl overflow-hidden shadow-lg">
           <img
-            src="public/interiorpagetop1.jpg"
+            src="interiorpagetop1.jpg"
             alt="Interior Design Services"
             className="w-full h-96 object-cover"
           />
