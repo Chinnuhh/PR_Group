@@ -23,15 +23,15 @@ const InteriorDesign: React.FC = () => {
             Transform your space with our creative interior design solutions that blend functionality with aesthetic appeal.
           </p>
         </div>
-
-        {/* Hero Image */}
-        <div className="mb-12 rounded-xl overflow-hidden shadow-lg">
-          <img
-            src="interiorpagetop1.jpg"
-            alt="Interior Design Services"
-            className="w-full h-96 object-cover"
-          />
-        </div>
+        
+{/* Hero Image */}
+<div className="mb-12 rounded-xl overflow-hidden shadow-lg">
+  <img
+    src="/interiorpagetop1.jpg"
+    alt="Interior Design Services"
+    className="w-full h-96 object-cover"
+  />
+</div>
 
         {/* Service Card */}
         <div className="max-w-4xl mx-auto mb-12">
