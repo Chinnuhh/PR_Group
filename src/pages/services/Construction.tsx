@@ -27,8 +27,17 @@ const Construction: React.FC = () => {
         {/* Hero Image */}
         <div className="mb-12 rounded-xl overflow-hidden shadow-lg">
           <img
-            src="https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg?auto=compress&cs=tinysrgb&w=1600"
+            src="/constructionpagetop1.jpg"
             alt="Construction Services"
+            className="w-full h-96 object-cover"
+          />
+        </div>
+
+        {/* Additional Hero Image */}
+        <div className="mb-12 rounded-xl overflow-hidden shadow-lg">
+          <img
+            src="/constructionpagetop2.jpg"
+            alt="Construction Services - Professional Work"
             className="w-full h-96 object-cover"
           />
         </div>
@@ -38,7 +47,7 @@ const Construction: React.FC = () => {
           <ServiceCard
             title="Professional Construction"
             description="We specialize in both residential and commercial construction projects, delivering high-quality buildings that meet your exact specifications. Our experienced team uses modern construction techniques and premium materials to ensure durability and excellence."
-            image="https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg?auto=compress&cs=tinysrgb&w=800"
+            image="/constructionpagetop1.jpg"
             features={features}
           />
         </div>
@@ -50,12 +59,12 @@ const Construction: React.FC = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              'https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg?auto=compress&cs=tinysrgb&w=800',
-              'https://images.pexels.com/photos/834892/pexels-photo-834892.jpeg?auto=compress&cs=tinysrgb&w=800',
-              'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800',
-              'https://images.pexels.com/photos/1457847/pexels-photo-1457847.jpeg?auto=compress&cs=tinysrgb&w=800',
-              'https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?auto=compress&cs=tinysrgb&w=800',
-              'https://images.pexels.com/photos/1454804/pexels-photo-1454804.jpeg?auto=compress&cs=tinysrgb&w=800',
+              '/constructionpagebottom1.jpg',
+              '/constructionpagebottom2.jpg',
+              '/constructionpagebottom3.jpg',
+              '/constructionpagebottom4.jpg',
+              '/constructionpagebottom5.jpg',
+              '/constructionpagebottom6.jpg',
             ].map((image, index) => (
               <div key={index} className="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow">
                 <img
