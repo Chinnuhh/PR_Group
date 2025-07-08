@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { MessageCircle, X, Send, Bot, User, Minimize2, Maximize2 } from 'lucide-react';
+import { MessageCircle, X, Send, User, Minimize2, Maximize2 } from 'lucide-react';
 import { CONTACT_INFO } from '../utils/constants';
 
 interface Message {
@@ -166,15 +166,9 @@ const AIAgent: React.FC<AIAgentProps> = ({ isOpen, onClose }) => {
 
   return (
     <>
-      {/* Backdrop */}
-      <div 
-        className="fixed inset-0 bg-charcoal-800/60 backdrop-blur-sm z-50 animate-fade-in" 
-        onClick={onClose}
-      ></div>
-      
-      {/* Modal - Centered on Screen with Slide-Up Animation */}
-      <div className={`fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 bg-surface-white rounded-2xl shadow-2xl border border-mustard-100 transition-all duration-500 ${
-        isMinimized ? 'w-80 h-16 animate-scale-in' : 'w-96 max-w-[90vw] h-[600px] max-h-[90vh] animate-slide-up'
+      {/* Floating Widget - Bottom Right */}
+      <div className={`fixed bottom-5 right-5 z-[9999] bg-surface-white rounded-2xl shadow-2xl border border-mustard-100 transition-all duration-500 ${
+        isMinimized ? 'w-80 h-16 animate-scale-in' : 'w-96 max-w-[calc(100vw-40px)] h-[600px] max-h-[calc(100vh-40px)] animate-slide-up'
       }`}>
         {/* Header */}
         <div className="bg-mustard-gradient text-charcoal-800 p-4 rounded-t-2xl flex items-center justify-between shadow-sm">
@@ -211,7 +205,7 @@ const AIAgent: React.FC<AIAgentProps> = ({ isOpen, onClose }) => {
         {!isMinimized && (
           <>
             {/* Messages */}
-            <div className="h-96 overflow-y-auto p-4 space-y-4 bg-gradient-to-b from-surface-white to-mustard-50 scrollbar-thin scrollbar-thumb-mustard-200 scrollbar-track-transparent">
+            <div className="h-80 overflow-y-auto p-4 space-y-4 bg-gradient-to-b from-surface-white to-mustard-50 scrollbar-thin scrollbar-thumb-mustard-200 scrollbar-track-transparent">
               {messages.map((message, index) => (
                 <div
                   key={message.id}
