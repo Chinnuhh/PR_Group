@@ -26,52 +26,52 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative w-full h-screen flex items-center justify-center overflow-hidden">
       {/* Image Background */}
       <div 
-        className="absolute inset-0 w-full h-full"
+        className="absolute inset-0 w-full h-full z-0"
         style={{
-          backgroundImage: "url('/3d_elevation_c.png')",
+          backgroundImage: "url('/3d_elevation copy.png')",
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'
         }}
-      >
-        {/* Mustard Yellow Overlay */}
-        <div className="absolute inset-0 bg-hero-gradient"></div>
-      </div>
+      ></div>
+
+      {/* Dark Transparent Overlay for Text Readability */}
+      <div className="absolute inset-0 bg-black/50 z-10"></div>
 
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
+      <div className="absolute inset-0 opacity-5 z-20">
         <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.2'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FFFFFF' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
         }}></div>
       </div>
 
       {/* Floating Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 w-20 h-20 bg-mustard-200/20 rounded-full animate-float"></div>
+      <div className="absolute inset-0 overflow-hidden pointer-events-none z-20">
+        <div className="absolute top-20 left-10 w-20 h-20 bg-white/10 rounded-full animate-float"></div>
         <div className="absolute top-40 right-20 w-16 h-16 bg-mustard-300/20 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute bottom-40 left-20 w-12 h-12 bg-mustard-200/20 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute bottom-40 left-20 w-12 h-12 bg-white/10 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
         <div className="absolute bottom-20 right-10 w-24 h-24 bg-mustard-300/20 rounded-full animate-float" style={{ animationDelay: '0.5s' }}></div>
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative z-30 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="max-w-4xl mx-auto">
           <div className={`transform transition-all duration-1000 ${
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
           }`}>
-            <h1 className="text-6xl md:text-8xl font-bold text-charcoal-800 mb-6 leading-tight">
+            <h1 className="text-6xl md:text-8xl font-bold text-white mb-6 leading-tight drop-shadow-2xl">
               <span className="inline-block animate-fade-in-up">PR</span>
-              <span className="inline-block animate-fade-in-up text-charcoal-800 drop-shadow-lg" style={{ animationDelay: '0.2s' }}> Group</span>
+              <span className="inline-block animate-fade-in-up text-white drop-shadow-2xl" style={{ animationDelay: '0.2s' }}> Group</span>
             </h1>
           </div>
           
           <div className={`transform transition-all duration-1000 delay-300 ${
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
           }`}>
-            <p className="text-xl md:text-2xl text-charcoal-700 mb-8 max-w-3xl mx-auto animate-fade-in-up drop-shadow-md" style={{ animationDelay: '0.4s' }}>
+            <p className="text-xl md:text-2xl text-white mb-8 max-w-3xl mx-auto animate-fade-in-up drop-shadow-lg" style={{ animationDelay: '0.4s' }}>
               Build Smart. Live Beautiful. Choose Excellence.
             </p>
           </div>
@@ -79,7 +79,7 @@ const Hero: React.FC = () => {
           <div className={`transform transition-all duration-1000 delay-500 ${
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
           }`}>
-            <p className="text-lg text-charcoal-600 mb-12 max-w-2xl mx-auto animate-fade-in-up drop-shadow-sm" style={{ animationDelay: '0.6s' }}>
+            <p className="text-lg text-white/90 mb-12 max-w-2xl mx-auto animate-fade-in-up drop-shadow-md" style={{ animationDelay: '0.6s' }}>
               Transform your vision into reality with our expert construction, interior design, and renovation services across Visakhapatnam, Srikakulam, and Vizianagaram.
             </p>
           </div>
@@ -103,10 +103,10 @@ const Hero: React.FC = () => {
             
             <button
               onClick={handleWhatsAppClick}
-              className="group relative overflow-hidden bg-charcoal-600 hover:bg-charcoal-700 text-surface-white px-8 py-4 rounded-full font-semibold transition-all duration-500 transform hover:scale-110 hover:shadow-2xl animate-fade-in-up"
+              className="group relative overflow-hidden bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white border-2 border-white/30 hover:border-white/50 px-8 py-4 rounded-full font-semibold transition-all duration-500 transform hover:scale-110 hover:shadow-2xl animate-fade-in-up"
               style={{ animationDelay: '1s' }}
             >
-              <div className="absolute inset-0 bg-charcoal-800 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="relative flex items-center">
                 <MessageCircle className="h-5 w-5 mr-3 group-hover:animate-pulse-soft" />
                 Get a Quote
@@ -118,7 +118,7 @@ const Hero: React.FC = () => {
           <div className={`transform transition-all duration-1000 delay-1000 ${
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
           }`}>
-            <p className="text-sm text-charcoal-600 mt-8 animate-pulse-soft drop-shadow-sm">
+            <p className="text-sm text-white/80 mt-8 animate-pulse-soft drop-shadow-md">
               Your dream space is one click away.
             </p>
           </div>
@@ -128,10 +128,10 @@ const Hero: React.FC = () => {
       {/* Scroll Indicator */}
       <button
         onClick={handleScrollClick}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 group cursor-pointer animate-bounce-gentle"
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 group cursor-pointer animate-bounce-gentle z-30"
       >
-        <div className="flex flex-col items-center space-y-2 text-charcoal-700 group-hover:text-charcoal-800 transition-colors duration-300">
-          <div className="w-6 h-10 border-2 border-current rounded-full flex justify-center group-hover:border-charcoal-800 transition-colors duration-300">
+        <div className="flex flex-col items-center space-y-2 text-white/80 group-hover:text-white transition-colors duration-300">
+          <div className="w-6 h-10 border-2 border-current rounded-full flex justify-center group-hover:border-white transition-colors duration-300">
             <div className="w-1 h-3 bg-current rounded-full mt-2 animate-pulse-soft"></div>
           </div>
           <ChevronDown className="h-4 w-4 animate-bounce-gentle group-hover:scale-110 transition-transform duration-300" />
