@@ -105,7 +105,7 @@ const Home: React.FC<HomeProps> = ({ onAIAssistantClick }) => {
                     className="group bg-mustard-gradient text-charcoal-800 px-6 py-3 rounded-full font-semibold transition-all duration-500 transform hover:scale-105 hover:shadow-xl"
                   >
                     <span className="flex items-center justify-center">
-                      <Bot className="h-5 w-5 mr-2 group-hover:animate-wiggle" />
+                      <MessageCircle className="h-5 w-5 mr-2 group-hover:animate-wiggle" />
                       Start Chatting
                       <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-2 transition-transform duration-300" />
                     </span>
@@ -124,11 +124,11 @@ const Home: React.FC<HomeProps> = ({ onAIAssistantClick }) => {
               </div>
             </div>
 
-            {/* Professional Avatar - Replaced Side Image */}
+            {/* AI Assistant Preview */}
             <div className="animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
               <div className="bg-surface-white rounded-2xl shadow-xl border border-mustard-100 p-8 text-center">
                 <div className="bg-mustard-gradient rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-6">
-                  <Bot className="h-12 w-12 text-charcoal-800" />
+                  <MessageCircle className="h-12 w-12 text-charcoal-800" />
                 </div>
                 <h3 className="text-2xl font-bold text-charcoal-800 mb-4">AI Construction Assistant</h3>
                 <p className="text-charcoal-600 mb-6">
@@ -138,6 +138,12 @@ const Home: React.FC<HomeProps> = ({ onAIAssistantClick }) => {
                   <div className="w-2 h-2 bg-mustard-400 rounded-full animate-pulse"></div>
                   <span>Online & Ready to Help</span>
                 </div>
+                <button
+                  onClick={handleChatClick}
+                  className="mt-4 bg-mustard-300 hover:bg-mustard-400 text-charcoal-800 px-4 py-2 rounded-full font-medium transition-all duration-300 transform hover:scale-105"
+                >
+                  Launch Assistant
+                </button>
               </div>
             </div>
           </div>
