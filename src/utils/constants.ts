@@ -11,7 +11,7 @@ export const SERVICES = [
     name: 'Construction',
     path: '/services/construction',
     description: 'Complete construction solutions from foundation to finish',
-    image: 'https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: '/constructionbg.jpg',
   },
   {
     id: 'interior-design',
