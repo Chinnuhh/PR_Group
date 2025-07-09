@@ -50,12 +50,13 @@ const InteriorDesign: React.FC = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[ 
-   /interiorpagebottom1.jpg
- /interiorpagebottom2.jpg
-/interiorpagebottom3.jpg
-/interiorpagebottom4.jpg
-/interiorpagebottom5.jpg
-/interiorpagebottom6.jpg].map((image, index) => (
+              '/interiorpagebottom1.jpg',
+              '/interiorpagebottom2.jpg',
+              '/interiorpagebottom3.jpg',
+              '/interiorpagebottom4.jpg',
+              '/interiorpagebottom5.jpg',
+              '/interiorpagebottom6.jpg',  
+].map((image, index) => (
               <div key={index} className="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow">
                 <img
                   src={image}
