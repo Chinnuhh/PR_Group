@@ -27,7 +27,7 @@ const Renovations: React.FC = () => {
         {/* Hero Image */}
         <div className="mb-12 rounded-xl overflow-hidden shadow-lg">
           <img
-            src="https://images.pexels.com/photos/834892/pexels-photo-834892.jpeg?auto=compress&cs=tinysrgb&w=1600"
+            src="/public/renovationheroimage.jpg"
             alt="Renovation Services"
             className="w-full h-96 object-cover"
           />
