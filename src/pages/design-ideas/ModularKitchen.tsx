@@ -29,7 +29,7 @@ const ModularKitchen: React.FC = () => {
           <ServiceCard
             title="Modular Kitchen Solutions"
             description="Transform your cooking space with our premium modular kitchen designs. We offer customized solutions that maximize storage, enhance functionality, and create a beautiful centerpiece for your home."
-            image="https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?auto=compress&cs=tinysrgb&w=800"
+            image="/modularkitchenheroimage.jpg"
             features={[
               'Custom cabinet designs and layouts',
               'Premium countertop materials',
