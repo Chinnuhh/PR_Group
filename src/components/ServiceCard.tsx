@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Phone, MessageCircle, ArrowRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import { CONTACT_INFO } from '../utils/constants';
 
 interface ServiceCardProps {
@@ -7,10 +8,12 @@ interface ServiceCardProps {
   description: string;
   image: string;
   features?: string[];
+  navigateTo?: string;
 }
 
-const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, image, features }) => {
+const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, image, features, navigateTo }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const navigate = useNavigate();
 
   const handleCallClick = () => {
     window.open(`tel:${CONTACT_INFO.phone}`, '_self');
@@ -21,11 +24,24 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, image, fe
     window.open(`${CONTACT_INFO.whatsappUrl}?text=${message}`, '_blank');
   };
 
+  const handleCardClick = (e: React.MouseEvent) => {
+    // Don't navigate if clicking on action buttons
+    if ((e.target as HTMLElement).closest('button')) {
+      return;
+    }
+    
+    if (navigateTo) {
+      navigate(navigateTo);
+    }
+  };
   return (
     <div 
-      className="group bg-surface-white/80 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:scale-105 border border-mustard-100 animate-fade-in-up h-full flex flex-col"
+      className={`group bg-surface-white/80 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:scale-105 border border-mustard-100 animate-fade-in-up h-full flex flex-col ${
+        navigateTo ? 'cursor-pointer' : ''
+      }`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      onClick={handleCardClick}
     >
       <div className="relative h-64 overflow-hidden flex-shrink-0">
         <img

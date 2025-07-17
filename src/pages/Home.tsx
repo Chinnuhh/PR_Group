@@ -205,6 +205,7 @@ const Home: React.FC<HomeProps> = ({ onAIAssistantClick }) => {
                     title={service.name}
                     description={service.description}
                     image={service.image}
+                    navigateTo={service.path}
                   />
                 </div>
               </div>
