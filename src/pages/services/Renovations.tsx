@@ -38,8 +38,8 @@ const Renovations: React.FC = () => {
         {/* Hero Image */}
         <div className="mb-16 rounded-2xl overflow-hidden shadow-2xl animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
           <img
-            src="public/renovationheroimage.jpg"
-            alt="Premium Renovation Services by PR Group"
+            src="/renovationheroimage.jpg"
+            alt="Renovation Services Hero Image"
             className="w-full h-96 md:h-[500px] object-cover hover:scale-105 transition-transform duration-700"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-charcoal-800/30 to-transparent"></div>
