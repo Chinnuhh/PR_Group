@@ -63,7 +63,7 @@ const Construction: React.FC = () => {
               '/constructionpagebottom2.jpg',
               '/ahahotelexterior.jpg',
               '/pujarirambabugaru.updated.png',
-              '/constructionpagebottom5.jpg',
+              '/constructionpagegalleryimageexterior.jpg',
               '/constructionpagebottom6.jpg',
             ].map((image, index) => (
               <div key={index} className="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow">
