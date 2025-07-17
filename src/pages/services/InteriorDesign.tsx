@@ -52,7 +52,7 @@ const InteriorDesign: React.FC = () => {
             {[ 
               '/interiorpagewoodenframe.jpg',
               '/bluepinkbedroom.jpg',
-              '/interiorpagebottom3.jpg',
+              '/meetingroominterior.jpg',
               '/interiorpagebottom4.jpg',
               '/interiorpagebottom5.jpg',
               '/interiorpagebottom6.jpg',  
