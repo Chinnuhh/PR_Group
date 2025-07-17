@@ -86,7 +86,7 @@ const Portfolio: React.FC = () => {
               { image: '/interiorpagewoodenframe.jpg', title: 'Modern Construction', type: 'Construction' },
               { image: '/ahahotelhall.jpg', title: 'Luxury Interior', type: 'Interior Design' },
               { image: 'https://images.pexels.com/photos/834892/pexels-photo-834892.jpeg?auto=compress&cs=tinysrgb&w=800', title: 'Office Renovation', type: 'Renovations' },
-              { image: 'https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?auto=compress&cs=tinysrgb&w=800', title: 'Kitchen Design', type: 'Interior Design' },
+              { image: '/meetingroominterior.jpg', title: 'Kitchen Design', type: 'Interior Design' },
               { image: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800', title: 'Living Space', type: 'Interior Design' },
               { image: 'https://images.pexels.com/photos/1454804/pexels-photo-1454804.jpeg?auto=compress&cs=tinysrgb&w=800', title: 'Bedroom Design', type: 'Interior Design' },
             ].map((item, index) => (
