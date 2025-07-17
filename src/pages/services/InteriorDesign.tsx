@@ -38,7 +38,7 @@ const InteriorDesign: React.FC = () => {
           <ServiceCard
             title="Professional Interior Design"
             description="Our interior design team creates beautiful, functional spaces that reflect your personality and lifestyle. From concept to completion, we handle every detail to ensure your space is both stunning and practical."
-            image="/interiorpagetop2.jpg"
+            image="/ahahotelforintpage.jpg"
             features={features}
           />
         </div>
