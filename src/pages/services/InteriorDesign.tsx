@@ -55,7 +55,7 @@ const InteriorDesign: React.FC = () => {
               '/meetingroominterior.jpg',
               '/interiorpagebottom4.jpg',
               '/stairslivingroominterior.jpg',
-              '/interiorpagebottom6.jpg',  
+              '/blackkitcheninterior.jpg',  
 ].map((image, index) => (
               <div key={index} className="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow">
                 <img
