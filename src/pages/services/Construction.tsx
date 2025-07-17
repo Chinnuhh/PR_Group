@@ -36,7 +36,7 @@ const Construction: React.FC = () => {
         {/* Additional Hero Image */}
         <div className="mb-12 rounded-xl overflow-hidden shadow-lg">
           <img
-            src="/constructionpagetop2.jpg"
+            src="/constructionheroimage.jpg"
             alt="Construction Services - Professional Work"
             className="w-full h-96 object-cover"
           />
