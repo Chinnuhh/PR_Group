@@ -61,7 +61,7 @@ const Construction: React.FC = () => {
             {[
               '/constructionpagebottom1.jpg',
               '/constructionpagebottom2.jpg',
-              '/ahahotelexterior.jpg',
+              '/ahahoteldaytime.jpg',
               '/pujarirambabugaru.updated.png',
               '/constructionpagebottom5.jpg',
               '/constructionpagebottom6.jpg',
