@@ -84,7 +84,7 @@ const Portfolio: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               { image: '/interiorpagewoodenframe.jpg', title: 'Modern Construction', type: 'Construction' },
-              { image: 'https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=800', title: 'Luxury Interior', type: 'Interior Design' },
+              { image: '/ahahotelhall.jpg', title: 'Luxury Interior', type: 'Interior Design' },
               { image: 'https://images.pexels.com/photos/834892/pexels-photo-834892.jpeg?auto=compress&cs=tinysrgb&w=800', title: 'Office Renovation', type: 'Renovations' },
               { image: 'https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?auto=compress&cs=tinysrgb&w=800', title: 'Kitchen Design', type: 'Interior Design' },
               { image: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800', title: 'Living Space', type: 'Interior Design' },
