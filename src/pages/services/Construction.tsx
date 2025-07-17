@@ -59,7 +59,7 @@ const Construction: React.FC = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              '/constructionpagebottom1.jpg',
+              '/commercialexterior.png',
               '/constructionpagebottom2.jpg',
               '/ahahoteldaytime.jpg',
               '/pujarirambabugaru.updated.png',
