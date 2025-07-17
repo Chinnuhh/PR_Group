@@ -65,7 +65,7 @@ const Renovations: React.FC = () => {
           <ServiceCard
             title="Professional Renovation Excellence"
             description="Transform your space with our comprehensive renovation services. We specialize in creating beautiful, functional environments that reflect your vision while enhancing your property's value and your quality of life."
-            image="/renovationheroimage.jpg"
+            image="/interiorpagebottom5.jpg"
             features={features}
           />
         </div>
