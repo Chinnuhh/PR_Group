@@ -47,7 +47,7 @@ const Construction: React.FC = () => {
           <ServiceCard
             title="Professional Construction"
             description="We specialize in both residential and commercial construction projects, delivering high-quality buildings that meet your exact specifications. Our experienced team uses modern construction techniques and premium materials to ensure durability and excellence."
-            image="/constructionpagetop1.jpg"
+            image="/ahahotelhall"
             features={features}
           />
         </div>
