@@ -50,7 +50,7 @@ const InteriorDesign: React.FC = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[ 
-              '/interiorpagebottom1.jpg',
+              '/interiorpagewoodenframe.jpg',
               '/interiorpagebottom2.jpg',
               '/interiorpagebottom3.jpg',
               '/interiorpagebottom4.jpg',
