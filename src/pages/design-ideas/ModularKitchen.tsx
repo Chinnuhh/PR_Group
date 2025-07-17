@@ -18,7 +18,7 @@ const ModularKitchen: React.FC = () => {
         {/* Hero Image */}
         <div className="mb-12 rounded-xl overflow-hidden shadow-lg">
           <img
-            src="/modularkitchen_1.jpg"
+            src="/modularkitchenheroimage.jpg"
             alt="Modular Kitchen Design"
             className="w-full h-96 object-cover"
           />
