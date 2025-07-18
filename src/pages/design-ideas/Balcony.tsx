@@ -29,7 +29,7 @@ const Balcony: React.FC = () => {
           <ServiceCard
             title="Balcony Design Solutions"
             description="Reimagine your balcony as an oasis. Our designs blend nature, comfort, and style to make the most of your outdoor space—whether it’s for relaxing, gardening, or entertaining."
-            image="/balconyhero.jpg"
+            image="/balcony1.jpg"
             features={[
               'Weather-resistant design solutions',
               'Space optimization for small balconies',
