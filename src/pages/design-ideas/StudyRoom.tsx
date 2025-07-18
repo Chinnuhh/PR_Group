@@ -18,7 +18,7 @@ const StudyRoom: React.FC = () => {
         {/* Hero Image */}
         <div className="mb-12 rounded-xl overflow-hidden shadow-lg">
           <img
-            src="https://images.pexels.com/photos/374074/pexels-photo-374074.jpeg?auto=compress&cs=tinysrgb&w=1600"
+            src="/study_hero_1.jpg"
             alt="Study Room Design"
             className="w-full h-96 object-cover"
           />
@@ -29,7 +29,7 @@ const StudyRoom: React.FC = () => {
           <ServiceCard
             title="Functional & Peaceful Study Spaces"
             description="Our study room designs focus on boosting concentration, minimizing distractions, and ensuring comfort during long hours of work or learning."
-            image="https://images.pexels.com/photos/374074/pexels-photo-374074.jpeg?auto=compress&cs=tinysrgb&w=1600"
+            image="/study_hero_2.jpg"
             features={[
               'Ergonomic desk and seating setups',
               'Optimized lighting for focus',
