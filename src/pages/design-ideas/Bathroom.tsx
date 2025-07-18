@@ -18,7 +18,7 @@ const Bathroom: React.FC = () => {
         {/* Hero Image */}
         <div className="mb-12 rounded-xl overflow-hidden shadow-lg">
           <img
-            src="/bathroom_5.jpg"
+            src="/bathroom_4.jpg"
             alt="Bathroom Design"
             className="w-full h-96 object-cover"
           />
