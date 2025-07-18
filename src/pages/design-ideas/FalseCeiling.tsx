@@ -18,7 +18,7 @@ const FalseCeiling: React.FC = () => {
         {/* Hero Image */}
         <div className="mb-12 rounded-xl overflow-hidden shadow-lg">
           <img
-            src="/ceiling_hero1.jpg"
+            src="/ceilingheropr.jpg"
             alt="False Ceiling Design"
             className="w-full h-96 object-cover"
           />
