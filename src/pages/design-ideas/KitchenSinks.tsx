@@ -18,7 +18,7 @@ const KitchenSinks: React.FC = () => {
         {/* Hero Image */}
         <div className="mb-12 rounded-xl overflow-hidden shadow-lg">
           <img
-            src="https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?auto=compress&cs=tinysrgb&w=1600"
+            src="/sink_hero_1.jpg"
             alt="Kitchen Sinks"
             className="w-full h-96 object-cover"
           />
@@ -29,7 +29,7 @@ const KitchenSinks: React.FC = () => {
           <ServiceCard
             title="Stylish & Functional Kitchen Sinks"
             description="Our range of kitchen sinks blends utility with elegance—perfect for modern kitchens and demanding home chefs."
-            image="https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?auto=compress&cs=tinysrgb&w=1600"
+            image="/sink_hero_2.jpg"
             features={[
               'Wide variety of sink materials and styles',
               'Custom sizing and configuration options',
