@@ -48,12 +48,12 @@ const KitchenSinks: React.FC = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              '/sink_1.jpg',
-              '/sink_2.jpg',
-              '/sink_3.jpg',
-              '/sink_4.jpg',
-              '/sink_5.jpg',
-              '/sink_6.jpg',
+              '/livingroom_1.jpg',
+              '/livingroom_2.jpg',
+              '/livingroom_3.jpg',
+              '/livingroom_4.jpg',
+              '/livingroom_5.jpg',
+              '/livingroom_6.jpg',
             ].map((img, index) => (
               <div key={index} className="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow group">
                 <img
