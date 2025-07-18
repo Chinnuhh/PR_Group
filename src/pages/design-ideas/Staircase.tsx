@@ -18,7 +18,7 @@ const Staircase: React.FC = () => {
         {/* Hero Image */}
         <div className="mb-12 rounded-xl overflow-hidden shadow-lg">
           <img
-            src="https://images.pexels.com/photos/1457847/pexels-photo-1457847.jpeg?auto=compress&cs=tinysrgb&w=1600"
+            src="/staircase_hero1.jpg"
             alt="Staircase Design"
             className="w-full h-96 object-cover"
           />
@@ -29,7 +29,7 @@ const Staircase: React.FC = () => {
           <ServiceCard
             title="Elegant and Functional Staircases"
             description="Our staircase solutions blend engineering precision with aesthetic excellence. Whether you're looking for modern minimalism or timeless tradition, we deliver stairs that stand out."
-            image="https://images.pexels.com/photos/1457847/pexels-photo-1457847.jpeg?auto=compress&cs=tinysrgb&w=1600"
+            image="/staircase_hero2.jpg"
             features={[
               'Custom staircase design and construction',
               'Wide variety of materials and finishes',
@@ -52,7 +52,7 @@ const Staircase: React.FC = () => {
               '/staircase_2.jpg',
               '/staircase_3.jpg',
               '/staircase_4.jpg',
-              '/staircase_5.jpg',
+              '/staircase_hero1.jpg',
               '/staircase_6.jpg',
             ].map((img, index) => (
               <div
