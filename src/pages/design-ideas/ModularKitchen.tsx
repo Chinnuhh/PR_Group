@@ -7,7 +7,8 @@ const ModularKitchen: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h1 classNam
+            e="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Modular Kitchen Designs
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -18,7 +19,7 @@ const ModularKitchen: React.FC = () => {
         {/* Hero Image */}
         <div className="mb-12 rounded-xl overflow-hidden shadow-lg">
           <img
-            src="/modularkitchen_2.jpg"
+            src="/modularkitchen_heronew1.jpg"
             alt="Modular Kitchen Design"
             className="w-full h-96 object-cover"
           />
