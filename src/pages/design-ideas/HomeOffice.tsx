@@ -18,7 +18,7 @@ const HomeOffice: React.FC = () => {
         {/* Hero Image */}
         <div className="mb-12 rounded-xl overflow-hidden shadow-lg">
           <img
-            src="https://images.pexels.com/photos/1454804/pexels-photo-1454804.jpeg?auto=compress&cs=tinysrgb&w=1600"
+            src="/homeoffice_hero_1.jpg"
             alt="Home Office Design"
             className="w-full h-96 object-cover"
           />
@@ -29,7 +29,7 @@ const HomeOffice: React.FC = () => {
           <ServiceCard
             title="Functional & Inspiring Workspace"
             description="Our home office designs focus on creating ergonomic, tech-friendly, and organized environments where you can thrive—whether you're working, studying, or creating."
-            image="https://images.pexels.com/photos/1454804/pexels-photo-1454804.jpeg?auto=compress&cs=tinysrgb&w=1600"
+            image="/homeoffice_hero_2.jpg"
             features={[
               'Ergonomic workspace design',
               'Custom storage and organization',
