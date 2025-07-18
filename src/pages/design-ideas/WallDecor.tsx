@@ -29,7 +29,7 @@ const WallDecor: React.FC = () => {
           <ServiceCard
             title="Expressive & Personalized Walls"
             description="Bring character to your home with our custom wall decor solutions that reflect your style and elevate your interiors."
-            image="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1600"
+            image="/walldecor_hero_2.jpg"
             features={[
               'Custom wall art and installations',
               'Textural elements and materials',
