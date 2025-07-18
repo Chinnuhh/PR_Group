@@ -53,7 +53,7 @@ const MasterBedroom: React.FC = () => {
               '/master_3.jpg',
               '/master_4.jpg',
               '/master_5.jpg',
-              '/master_6.jpg',
+              '/master_8.jpg',
             ].map((img, index) => (
               <div key={index} className="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow group">
                 <img
