@@ -18,7 +18,7 @@ const DiningRoom: React.FC = () => {
         {/* Hero Image */}
         <div className="mb-12 rounded-xl overflow-hidden shadow-lg">
           <img
-            src="/diningroom_hero_1.jpg"
+            src="/diningroom_5.jpg"
             alt="Dining Room Design"
             className="w-full h-96 object-cover"
           />
