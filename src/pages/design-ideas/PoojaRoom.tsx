@@ -49,7 +49,7 @@ const PoojaRoom: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               '/pooja_hero_1.jpg',
-              '/pooja_hero_1.jpg',
+              '/pooja_hero_2.jpg',
               '/pooja_3.jpg',
               '/pooja_4.jpg',
               '/pooja_5.jpg',
