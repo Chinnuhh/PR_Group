@@ -49,10 +49,10 @@ const Wallpaper: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               '/wallpaper_1.jpg',
+              '/wallpaper_2.jpg',
               '/wallpaper_4.jpg',
-              '/wallpaper_3.jpg',
               '/wallpaper_hero_1.jpg',
-              '/wallpaper_5.jpg',
+              'wallpaper_hero_2.jpg',
               '/wallpaper_6.jpg',
             ].map((img, index) => (
               <div
