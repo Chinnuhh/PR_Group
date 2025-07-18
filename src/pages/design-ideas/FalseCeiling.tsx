@@ -18,7 +18,7 @@ const FalseCeiling: React.FC = () => {
         {/* Hero Image */}
         <div className="mb-12 rounded-xl overflow-hidden shadow-lg">
           <img
-            src="https://images.pexels.com/photos/1457847/pexels-photo-1457847.jpeg?auto=compress&cs=tinysrgb&w=1600"
+            src="/ceiling_hero1.jpg"
             alt="False Ceiling Design"
             className="w-full h-96 object-cover"
           />
@@ -29,7 +29,7 @@ const FalseCeiling: React.FC = () => {
           <ServiceCard
             title="False Ceiling Solutions"
             description="Enhance the aesthetic and functionality of your rooms with expertly designed false ceilings. Whether you want integrated lighting, better acoustics, or architectural detailing, we provide tailored solutions."
-            image="https://images.pexels.com/photos/1457847/pexels-photo-1457847.jpeg?auto=compress&cs=tinysrgb&w=1600"
+            image="/ceiling_hero2.jpg"
             features={[
               'Custom false ceiling designs',
               'Integrated lighting solutions',
