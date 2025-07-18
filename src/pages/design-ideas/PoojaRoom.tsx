@@ -18,7 +18,7 @@ const PoojaRoom: React.FC = () => {
         {/* Hero Image */}
         <div className="mb-12 rounded-xl overflow-hidden shadow-lg">
           <img
-            src="https://images.pexels.com/photos/3214113/pexels-photo-3214113.jpeg?auto=compress&cs=tinysrgb&w=1600"
+            src="/pooja_hero_1.jpg"
             alt="Pooja Room"
             className="w-full h-96 object-cover"
           />
@@ -29,7 +29,7 @@ const PoojaRoom: React.FC = () => {
           <ServiceCard
             title="Spiritual Comfort Meets Design"
             description="Our pooja room designs honor tradition while offering practical solutions for modern homes. Whether large or compact, each space is designed with peace, devotion, and aesthetics in mind."
-            image="https://images.pexels.com/photos/3214113/pexels-photo-3214113.jpeg?auto=compress&cs=tinysrgb&w=1600"
+            image="/pooja_hero_2.jpg"
             features={[
               'Traditional and contemporary pooja room designs',
               'Custom storage for religious items',
