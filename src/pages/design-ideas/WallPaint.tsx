@@ -18,7 +18,7 @@ const WallPaint: React.FC = () => {
         {/* Hero Image */}
         <div className="mb-12 rounded-xl overflow-hidden shadow-lg">
           <img
-            src="https://images.pexels.com/photos/1457847/pexels-photo-1457847.jpeg?auto=compress&cs=tinysrgb&w=1600"
+            src="/wallpaint_hero_1.jpg"
             alt="Wall Paint Hero"
             className="w-full h-96 object-cover"
           />
