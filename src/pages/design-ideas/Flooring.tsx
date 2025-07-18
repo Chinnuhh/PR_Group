@@ -18,7 +18,7 @@ const Flooring: React.FC = () => {
         {/* Hero Image */}
         <div className="mb-12 rounded-xl overflow-hidden shadow-lg">
           <img
-            src="public/flooring_hero_1.jpg"
+            src="/flooring_hero_1.jpg"
             alt="Flooring Design"
             className="w-full h-96 object-cover"
           />
@@ -29,7 +29,7 @@ const Flooring: React.FC = () => {
           <ServiceCard
             title="Flooring Solutions"
             description="We deliver expertly crafted flooring options for every room and need. From durable tiles to elegant hardwood, our range of finishes and materials ensures the perfect foundation for your style."
-            image="public/flooring_hero_2.jpg"
+            image="/flooring_hero_2.jpg"
             features={[
               'Wide range of flooring materials',
               'Custom patterns and layouts',
