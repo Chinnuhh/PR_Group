@@ -78,4 +78,45 @@ const HomeBar: React.FC = () => {
                 <li>• Plan for adequate storage and organization</li>
                 <li>• Include proper electrical and plumbing</li>
                 <li>• Consider refrigeration and ice maker needs</li>
-                <l
+                <li>• Design for easy cleaning and maintenance</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Entertainment Design</h3>
+              <ul className="space-y-2 text-gray-600">
+                <li>• Create comfortable seating arrangements</li>
+                <li>• Plan for proper lighting and ambiance</li>
+                <li>• Include entertainment and music systems</li>
+                <li>• Consider traffic flow and accessibility</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* Styles Section */}
+        <div className="bg-white rounded-xl p-8 shadow-lg">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+            Home Bar Styles
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { style: 'Classic', description: 'Traditional pub and tavern styles', icon: '🏛️' },
+              { style: 'Modern', description: 'Sleek and contemporary designs', icon: '✨' },
+              { style: 'Rustic', description: 'Natural materials and textures', icon: '🌳' },
+              { style: 'Compact', description: 'Space-efficient solutions', icon: '📦' },
+            ].map((style, index) => (
+              <div key={index} className="text-center p-6 bg-gray-50 rounded-lg">
+                <div className="text-4xl mb-4">{style.icon}</div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">{style.style}</h3>
+                <p className="text-gray-600 text-sm">{style.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default HomeBar;
+
