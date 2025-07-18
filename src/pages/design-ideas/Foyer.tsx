@@ -18,7 +18,7 @@ const Foyer: React.FC = () => {
         {/* Hero Image */}
         <div className="mb-12 rounded-xl overflow-hidden shadow-lg">
           <img
-            src="/foyer_hero_1.jpg"
+            src="/foyer_hero_1new.jpg"
             alt="Foyer Design"
             className="w-full h-96 object-cover"
           />
@@ -29,7 +29,7 @@ const Foyer: React.FC = () => {
           <ServiceCard
             title="Foyer Solutions"
             description="Our foyer solutions blend aesthetics and practicality to create inviting entryways. We help you make a great first impression while offering thoughtful storage and space use."
-            image="/foyer_hero_2.jpg"
+            image="/foyer_hero_2new.jpg"
             features={[
               'Welcoming entrance design solutions',
               'Storage for shoes, coats, and accessories',
