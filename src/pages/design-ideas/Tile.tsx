@@ -48,12 +48,12 @@ const Tile: React.FC = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              '/tile_1.jpg',
-              '/tile_2.jpg',
-              '/tile_3.jpg',
-              '/tile_4.jpg',
-              '/tile_5.jpg',
-              '/tile_6.jpg',
+              '/tiles_1.jpg',
+              '/tiles_2.jpg',
+              '/tiles_3.jpg',
+              '/tiles_4.jpg',
+              '/tiles_5.jpg',
+              '/tiles_6.jpg',
             ].map((img, index) => (
               <div
                 key={index}
