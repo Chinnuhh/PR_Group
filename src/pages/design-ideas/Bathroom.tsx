@@ -18,7 +18,7 @@ const Bathroom: React.FC = () => {
         {/* Hero Image */}
         <div className="mb-12 rounded-xl overflow-hidden shadow-lg">
           <img
-            src="/bathroom_7.jpg"
+            src="/bathroom_5.jpg"
             alt="Bathroom Design"
             className="w-full h-96 object-cover"
           />
@@ -29,7 +29,7 @@ const Bathroom: React.FC = () => {
           <ServiceCard
             title="Bathroom Design Solutions"
             description="Turn your bathroom into a spa-like oasis with our modern and elegant design concepts. We focus on space utilization, luxury, and comfort to create your ideal retreat."
-            image="/bathroom_2.jpg"
+            image="/bathroom_3.jpg"
             features={[
               'Luxury bathroom fixtures and fittings',
               'Water-efficient plumbing solutions',
