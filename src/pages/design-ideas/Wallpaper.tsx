@@ -52,7 +52,7 @@ const Wallpaper: React.FC = () => {
               '/wallpaper_2.jpg',
               '/wallpaper_4.jpg',
               '/wallpaper_hero_1.jpg',
-              'wallpaper_hero_2.jpg',
+              '/wallpaper_hero_2.jpg',
               '/wallpaper_6.jpg',
             ].map((img, index) => (
               <div
