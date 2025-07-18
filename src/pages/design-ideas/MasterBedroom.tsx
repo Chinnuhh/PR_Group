@@ -29,7 +29,7 @@ const MasterBedroom: React.FC = () => {
           <ServiceCard
             title="Relaxing & Elegant Master Bedrooms"
             description="Our master bedroom designs focus on serenity, comfort, and timeless beauty. Experience restful luxury every day."
-            image="https://images.pexels.com/photos/1454804/pexels-photo-1454804.jpeg?auto=compress&cs=tinysrgb&w=1600"
+            image="/masterbedroom_hero_1.jpg"
             features={[
               'Custom bedroom layouts and designs',
               'Premium furniture and fixtures',
