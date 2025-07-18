@@ -18,7 +18,7 @@ const HomeBar: React.FC = () => {
         {/* Hero Image */}
         <div className="mb-12 rounded-xl overflow-hidden shadow-lg">
           <img
-            src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1600"
+            src="/homebar_hero_1.jpg"
             alt="Home Bar Design"
             className="w-full h-96 object-cover"
           />
@@ -29,7 +29,7 @@ const HomeBar: React.FC = () => {
           <ServiceCard
             title="Entertainment & Style in One"
             description="Our home bar designs combine luxury, comfort, and practicality. Whether you're entertaining guests or enjoying a quiet evening, our bars elevate the experience."
-            image="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1600"
+            image="/homebar_hero_2.jpg"
             features={[
               'Custom bar design and construction',
               'Storage for bottles, glasses, and accessories',
