@@ -6,7 +6,7 @@ const Balcony: React.FC = () => {
     <DesignIdeaTemplate
       title="Balcony Designs"
       description="Transform your balcony into a beautiful outdoor retreat with our innovative design solutions. We create functional spaces that extend your living area and connect you with nature."
-      heroImage="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1600"
+      heroImage="/balcony7.jpg"
       features={[
         'Weather-resistant design solutions',
         'Space optimization for small balconies',
