@@ -102,7 +102,7 @@ const Portfolio: React.FC = () => {
               { image: '/meetingroominterior.jpg', title: 'Office Renovation', type: 'Renovations' },
               { image: '/modularkitchen_hero2.jpg', title: 'Kitchen Design', type: 'Interior Design' },
               { image: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800', title: 'Living Space', type: 'Interior Design' },
-              { image: 'https://images.pexels.com/photos/1454804/pexels-photo-1454804.jpeg?auto=compress&cs=tinysrgb&w=800', title: 'Bedroom Design', type: 'Interior Design' },
+              { image: '/masterbedroom_hero_1.jpg', title: 'Bedroom Design', type: 'Interior Design' },
             ].map((item, index) => (
               <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow group">
                 <div className="relative h-64">
