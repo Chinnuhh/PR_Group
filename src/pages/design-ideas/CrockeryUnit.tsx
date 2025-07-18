@@ -50,7 +50,7 @@ const CrockeryUnit: React.FC = () => {
             {[
               '/crockeryunit_1.jpg',
               '/crockeryunit_2.jpg',
-              '/crockeryunit_3.jpg',
+              '/crockeryunit_7.jpg',
               '/crockeryunit_4.jpg',
               '/crockeryunit_5.jpg',
               '/crockeryunit_6.jpg',
