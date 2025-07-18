@@ -10,105 +10,36 @@ import Construction from './pages/services/Construction';
 import InteriorDesign from './pages/services/InteriorDesign';
 import Renovations from './pages/services/Renovations';
 import ModularKitchen from './pages/design-ideas/ModularKitchen';
-import DesignIdeaTemplate from './pages/design-ideas/DesignIdeaTemplate';
+import Wardrobe from './pages/design-ideas/Wardrobe';
+import Bathroom from './pages/design-ideas/Bathroom';
+import MasterBedroom from './pages/design-ideas/MasterBedroom';
+import LivingRoom from './pages/design-ideas/LivingRoom';
+import PoojaRoom from './pages/design-ideas/PoojaRoom';
+import TVUnit from './pages/design-ideas/TVUnit';
+import FalseCeiling from './pages/design-ideas/FalseCeiling';
+import KidsBedroom from './pages/design-ideas/KidsBedroom';
+import Balcony from './pages/design-ideas/Balcony';
+import DiningRoom from './pages/design-ideas/DiningRoom';
+import Foyer from './pages/design-ideas/Foyer';
+import HomeOffice from './pages/design-ideas/HomeOffice';
+import GuestBedroom from './pages/design-ideas/GuestBedroom';
+import Window from './pages/design-ideas/Window';
+import Flooring from './pages/design-ideas/Flooring';
+import WallDecor from './pages/design-ideas/WallDecor';
+import WallPaint from './pages/design-ideas/WallPaint';
+import Wallpaper from './pages/design-ideas/Wallpaper';
+import Tile from './pages/design-ideas/Tile';
+import StudyRoom from './pages/design-ideas/StudyRoom';
+import KitchenSinks from './pages/design-ideas/KitchenSinks';
+import SpaceSaving from './pages/design-ideas/SpaceSaving';
+import Door from './pages/design-ideas/Door';
+import Staircase from './pages/design-ideas/Staircase';
+import CrockeryUnit from './pages/design-ideas/CrockeryUnit';
+import HomeBar from './pages/design-ideas/HomeBar';
 import Portfolio from './pages/Portfolio';
 import Contact from './pages/Contact';
 import { DESIGN_IDEAS } from './utils/constants';
 import { usePageTransition } from './hooks/usePageTransition';
-
-// Design idea page component generator
-const createDesignIdeaPage = (ideaId: string, ideaName: string) => {
-  const DesignIdeaPage: React.FC = () => {
-    // Custom content for specific design ideas
-    const getDesignContent = (id: string) => {
-      const commonStyles = [
-        { name: 'Modern', description: 'Clean lines and contemporary aesthetics', icon: '✨' },
-        { name: 'Traditional', description: 'Classic elegance with timeless appeal', icon: '🏛️' },
-        { name: 'Contemporary', description: 'Current trends with functional design', icon: '🎨' },
-        { name: 'Minimalist', description: 'Simple, uncluttered design approach', icon: '⚪' },
-      ];
-
-      const baseContent = {
-        description: `Discover innovative ${ideaName.toLowerCase()} that combine functionality with style. Our expert designers create beautiful spaces tailored to your lifestyle and preferences.`,
-        heroImage: DESIGN_IDEAS.find(idea => idea.id === id)?.image || 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1600',
-        features: [
-          'Custom design solutions',
-          'Premium materials and finishes',
-          'Space optimization techniques',
-          'Professional installation',
-          'Warranty and after-sales support',
-          'Budget-friendly options available',
-        ],
-        tips: [
-          {
-            category: 'Design Planning',
-            items: [
-              'Consider your lifestyle and daily routines',
-              'Choose colors that complement your space',
-              'Plan for adequate lighting and ventilation',
-              'Ensure proper proportions and scale',
-            ],
-          },
-          {
-            category: 'Material Selection',
-            items: [
-              'Opt for durable and easy-to-maintain materials',
-              'Consider the climate and usage patterns',
-              'Balance aesthetics with functionality',
-              'Choose sustainable and eco-friendly options',
-            ],
-          },
-        ],
-        styles: commonStyles,
-      };
-
-      // Specific customizations for certain design ideas
-      switch (id) {
-        case 'modular-kitchen':
-          return {
-            ...baseContent,
-            features: [
-              'Custom cabinet designs and layouts',
-              'Premium countertop materials',
-              'Smart storage solutions',
-              'Modern appliance integration',
-              'Efficient workflow design',
-              'Quality hardware and finishes',
-            ],
-          };
-        case 'bathroom':
-          return {
-            ...baseContent,
-            features: [
-              'Luxury bathroom fixtures and fittings',
-              'Water-efficient plumbing solutions',
-              'Premium tiles and finishes',
-              'Proper ventilation systems',
-              'Storage and organization solutions',
-              'Safety and accessibility features',
-            ],
-          };
-        default:
-          return baseContent;
-      }
-    };
-
-    const content = getDesignContent(ideaId);
-
-    return (
-      <DesignIdeaTemplate
-        title={ideaName}
-        description={content.description}
-        heroImage={content.heroImage}
-        features={content.features}
-        tips={content.tips}
-        styles={content.styles}
-      />
-    );
-  };
-
-  return DesignIdeaPage;
-};
 
 // App Content Component with Page Transition
 const AppContent: React.FC = () => {
@@ -137,13 +68,32 @@ const AppContent: React.FC = () => {
           
           {/* Design Ideas Routes */}
           <Route path="/design-ideas/modular-kitchen" element={<ModularKitchen />} />
-          {DESIGN_IDEAS.filter(idea => idea.id !== 'modular-kitchen').map((idea) => (
-            <Route
-              key={idea.id}
-              path={`/design-ideas/${idea.id}`}
-              element={React.createElement(createDesignIdeaPage(idea.id, idea.name))}
-            />
-          ))}
+          <Route path="/design-ideas/wardrobe" element={<Wardrobe />} />
+          <Route path="/design-ideas/bathroom" element={<Bathroom />} />
+          <Route path="/design-ideas/master-bedroom" element={<MasterBedroom />} />
+          <Route path="/design-ideas/living-room" element={<LivingRoom />} />
+          <Route path="/design-ideas/pooja-room" element={<PoojaRoom />} />
+          <Route path="/design-ideas/tv-unit" element={<TVUnit />} />
+          <Route path="/design-ideas/false-ceiling" element={<FalseCeiling />} />
+          <Route path="/design-ideas/kids-bedroom" element={<KidsBedroom />} />
+          <Route path="/design-ideas/balcony" element={<Balcony />} />
+          <Route path="/design-ideas/dining-room" element={<DiningRoom />} />
+          <Route path="/design-ideas/foyer" element={<Foyer />} />
+          <Route path="/design-ideas/home-office" element={<HomeOffice />} />
+          <Route path="/design-ideas/guest-bedroom" element={<GuestBedroom />} />
+          <Route path="/design-ideas/window" element={<Window />} />
+          <Route path="/design-ideas/flooring" element={<Flooring />} />
+          <Route path="/design-ideas/wall-decor" element={<WallDecor />} />
+          <Route path="/design-ideas/wall-paint" element={<WallPaint />} />
+          <Route path="/design-ideas/wallpaper" element={<Wallpaper />} />
+          <Route path="/design-ideas/tile" element={<Tile />} />
+          <Route path="/design-ideas/study-room" element={<StudyRoom />} />
+          <Route path="/design-ideas/kitchen-sinks" element={<KitchenSinks />} />
+          <Route path="/design-ideas/space-saving" element={<SpaceSaving />} />
+          <Route path="/design-ideas/door" element={<Door />} />
+          <Route path="/design-ideas/staircase" element={<Staircase />} />
+          <Route path="/design-ideas/crockery-unit" element={<CrockeryUnit />} />
+          <Route path="/design-ideas/home-bar" element={<HomeBar />} />
           
           {/* Other Routes */}
           <Route path="/portfolio" element={<Portfolio />} />
