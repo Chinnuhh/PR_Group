@@ -18,7 +18,7 @@ const SpaceSaving: React.FC = () => {
         {/* Hero Image */}
         <div className="mb-12 rounded-xl overflow-hidden shadow-lg">
           <img
-            src="https://images.pexels.com/photos/1457847/pexels-photo-1457847.jpeg?auto=compress&cs=tinysrgb&w=1600"
+            src="/space_5.jpg"
             alt="Space Saving Design"
             className="w-full h-96 object-cover"
           />
@@ -29,7 +29,7 @@ const SpaceSaving: React.FC = () => {
           <ServiceCard
             title="Smart Designs for Compact Living"
             description="Our space-saving solutions focus on maximizing every inch. From convertible furniture to vertical storage, we help you make the most out of smaller homes without compromising comfort or style."
-            image="https://images.pexels.com/photos/1457847/pexels-photo-1457847.jpeg?auto=compress&cs=tinysrgb&w=1600"
+            image="/space_6.jpg"
             features={[
               'Multi-functional furniture solutions',
               'Vertical storage and organization',
