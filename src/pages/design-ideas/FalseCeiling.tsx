@@ -29,7 +29,7 @@ const FalseCeiling: React.FC = () => {
           <ServiceCard
             title="False Ceiling Solutions"
             description="Enhance the aesthetic and functionality of your rooms with expertly designed false ceilings. Whether you want integrated lighting, better acoustics, or architectural detailing, we provide tailored solutions."
-            image="/ceiling_hero2.jpg"
+            image="/ceiling_prgroup_2.jpg"
             features={[
               'Custom false ceiling designs',
               'Integrated lighting solutions',
