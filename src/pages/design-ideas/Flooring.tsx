@@ -18,7 +18,7 @@ const Flooring: React.FC = () => {
         {/* Hero Image */}
         <div className="mb-12 rounded-xl overflow-hidden shadow-lg">
           <img
-            src="/flooring_1.jpg"
+            src="/flooring_2.jpg"
             alt="Flooring Design"
             className="w-full h-96 object-cover"
           />
