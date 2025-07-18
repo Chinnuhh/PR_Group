@@ -51,9 +51,9 @@ const DiningRoom: React.FC = () => {
               '/diningroom_1.jpg',
               '/diningroom_2.jpg',
               '/diningroom_3.jpg',
-              '/diningroom_4.jpg',
-              '/diningroom_5.jpg',
               '/diningroom_6.jpg',
+              '/diningroom_5.jpg',
+              '/diningroom_4.jpg',
             ].map((image, index) => (
               <div key={index} className="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow group">
                 <img
