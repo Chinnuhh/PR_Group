@@ -6,7 +6,7 @@ const KidsBedroom: React.FC = () => {
     <DesignIdeaTemplate
       title="Kids Bedroom Designs"
       description="Create magical and functional spaces for children with our playful bedroom designs. We combine safety, creativity, and growth-friendly solutions for the perfect kids' room."
-      heroImage="https://images.pexels.com/photos/1454804/pexels-photo-1454804.jpeg?auto=compress&cs=tinysrgb&w=1600"
+      heroImage="/kidsbedroom_hero_1.jpg"
       features={[
         'Age-appropriate design solutions',
         'Safety-focused furniture and layouts',
