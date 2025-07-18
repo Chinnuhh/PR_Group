@@ -18,7 +18,7 @@ const Foyer: React.FC = () => {
         {/* Hero Image */}
         <div className="mb-12 rounded-xl overflow-hidden shadow-lg">
           <img
-            src="/foyer_hero_1new.jpg"
+            src="/foyer_hero_1_new.jpg"
             alt="Foyer Design"
             className="w-full h-96 object-cover"
           />
