@@ -18,7 +18,7 @@ const Wardrobe: React.FC = () => {
         {/* Hero Image */}
         <div className="mb-12 rounded-xl overflow-hidden shadow-lg">
           <img
-            src="wardrobe_hero_1.jpg"
+            src="/wardrobe_hero_1.jpg"
             alt="Wardrobe Hero"
             className="w-full h-96 object-cover"
           />
@@ -29,7 +29,7 @@ const Wardrobe: React.FC = () => {
           <ServiceCard
             title="Custom Wardrobe Solutions"
             description="Stylish storage that works for your lifestyle. Designed for function, crafted with precision."
-            image="wardrobe_hero_2.jpg"
+            image="/wardrobe_hero_2.jpg"
             features={[
               'Custom wardrobe designs and layouts',
               'Premium materials and finishes',
