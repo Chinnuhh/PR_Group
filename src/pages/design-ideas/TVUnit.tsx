@@ -29,7 +29,7 @@ const TVUnit: React.FC = () => {
           <ServiceCard
             title="Elegant & Functional TV Units"
             description="Our TV unit designs combine smart storage, clean aesthetics, and seamless tech integration to enhance your living room’s style and organization."
-            image="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1600"
+            image="/tvunit_hero_2.jpg"
             features={[
               'Custom TV unit designs and layouts',
               'Cable management and organization',
