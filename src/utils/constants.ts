@@ -42,7 +42,6 @@ export const DESIGN_IDEAS = [
   { id: 'balcony', name: 'Balcony Designs', image: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800' },
   { id: 'dining-room', name: 'Dining Room Designs', image: 'https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?auto=compress&cs=tinysrgb&w=800' },
   { id: 'foyer', name: 'Foyer Designs', image: 'https://images.pexels.com/photos/1457847/pexels-photo-1457847.jpeg?auto=compress&cs=tinysrgb&w=800' },
-  { id: 'homes-by-livspace', name: 'Homes by Livspace', image: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800' },
   { id: 'home-office', name: 'Home Office Designs', image: 'https://images.pexels.com/photos/1454804/pexels-photo-1454804.jpeg?auto=compress&cs=tinysrgb&w=800' },
   { id: 'guest-bedroom', name: 'Guest Bedroom Designs', image: 'https://images.pexels.com/photos/1454804/pexels-photo-1454804.jpeg?auto=compress&cs=tinysrgb&w=800' },
   { id: 'window', name: 'Window Designs', image: 'https://images.pexels.com/photos/1457847/pexels-photo-1457847.jpeg?auto=compress&cs=tinysrgb&w=800' },
