@@ -62,7 +62,7 @@ const Construction: React.FC = () => {
               '/commercialexterior.png',
               '/constructionpagebottom2.jpg',
               '/ahahoteldaytime.jpg',
-              '/pujarirambabugaru.updated.png',
+              '/kidsbedroom_hero_1.jpg',
               '/constructionpagebottom5.jpg',
               '/constructionpagebottom6.jpg',
             ].map((image, index) => (
