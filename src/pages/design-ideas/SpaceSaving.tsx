@@ -1,47 +1,120 @@
 import React from 'react';
-import DesignIdeaTemplate from './DesignIdeaTemplate';
+import ServiceCard from '../../components/ServiceCard';
 
 const SpaceSaving: React.FC = () => {
   return (
-    <DesignIdeaTemplate
-      title="Space Saving Designs"
-      description="Maximize your living space with our innovative space-saving design solutions. We create clever storage and multi-functional designs that make small spaces feel larger and more organized."
-      heroImage="https://images.pexels.com/photos/1457847/pexels-photo-1457847.jpeg?auto=compress&cs=tinysrgb&w=1600"
-      features={[
-        'Multi-functional furniture solutions',
-        'Vertical storage and organization',
-        'Hidden storage compartments',
-        'Foldable and convertible designs',
-        'Wall-mounted and floating elements',
-        'Custom built-in solutions',
-      ]}
-      tips={[
-        {
-          category: 'Space Optimization',
-          items: [
-            'Utilize vertical space with tall storage',
-            'Choose furniture with multiple functions',
-            'Use hidden storage in unexpected places',
-            'Consider foldable and collapsible options',
-          ],
-        },
-        {
-          category: 'Design Strategy',
-          items: [
-            'Keep pathways clear and unobstructed',
-            'Use light colors to create openness',
-            'Incorporate mirrors to expand visual space',
-            'Choose furniture appropriate to room scale',
-          ],
-        },
-      ]}
-      styles={[
-        { name: 'Multi-functional', description: 'Furniture with multiple purposes', icon: '🔄' },
-        { name: 'Vertical', description: 'Wall-mounted and tall storage', icon: '📏' },
-        { name: 'Hidden', description: 'Concealed storage solutions', icon: '🔍' },
-        { name: 'Modular', description: 'Flexible and adaptable systems', icon: '🧩' },
-      ]}
-    />
+    <div className="min-h-screen bg-gray-50 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            Space Saving Designs
+          </h1>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Maximize your living space with our innovative space-saving design solutions. We create clever storage and multi-functional designs that make small spaces feel larger and more organized.
+          </p>
+        </div>
+
+        {/* Hero Image */}
+        <div className="mb-12 rounded-xl overflow-hidden shadow-lg">
+          <img
+            src="https://images.pexels.com/photos/1457847/pexels-photo-1457847.jpeg?auto=compress&cs=tinysrgb&w=1600"
+            alt="Space Saving Design"
+            className="w-full h-96 object-cover"
+          />
+        </div>
+
+        {/* Service Card */}
+        <div className="max-w-4xl mx-auto mb-12">
+          <ServiceCard
+            title="Smart Designs for Compact Living"
+            description="Our space-saving solutions focus on maximizing every inch. From convertible furniture to vertical storage, we help you make the most out of smaller homes without compromising comfort or style."
+            image="https://images.pexels.com/photos/1457847/pexels-photo-1457847.jpeg?auto=compress&cs=tinysrgb&w=1600"
+            features={[
+              'Multi-functional furniture solutions',
+              'Vertical storage and organization',
+              'Hidden storage compartments',
+              'Foldable and convertible designs',
+              'Wall-mounted and floating elements',
+              'Custom built-in solutions',
+            ]}
+          />
+        </div>
+
+        {/* Gallery */}
+        <div className="mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+            Space-Saving Gallery
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              '/space_1.jpg',
+              '/space_2.jpg',
+              '/space_3.jpg',
+              '/space_4.jpg',
+              '/space_5.jpg',
+              '/space_6.jpg',
+            ].map((img, index) => (
+              <div key={index} className="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow group">
+                <img
+                  src={img}
+                  alt={`Space Saving Design ${index + 1}`}
+                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Tips Section */}
+        <div className="bg-white rounded-xl p-8 shadow-lg mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+            Space Saving Tips
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Space Optimization</h3>
+              <ul className="space-y-2 text-gray-600">
+                <li>• Utilize vertical space with tall storage</li>
+                <li>• Choose furniture with multiple functions</li>
+                <li>• Use hidden storage in unexpected places</li>
+                <li>• Consider foldable and collapsible options</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Design Strategy</h3>
+              <ul className="space-y-2 text-gray-600">
+                <li>• Keep pathways clear and unobstructed</li>
+                <li>• Use light colors to create openness</li>
+                <li>• Incorporate mirrors to expand visual space</li>
+                <li>• Choose furniture appropriate to room scale</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* Styles Section */}
+        <div className="bg-white rounded-xl p-8 shadow-lg">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+            Space Saving Styles
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { style: 'Multi-functional', description: 'Furniture with multiple purposes', icon: '🔄' },
+              { style: 'Vertical', description: 'Wall-mounted and tall storage', icon: '📏' },
+              { style: 'Hidden', description: 'Concealed storage solutions', icon: '🔍' },
+              { style: 'Modular', description: 'Flexible and adaptable systems', icon: '🧩' },
+            ].map((style, index) => (
+              <div key={index} className="text-center p-6 bg-gray-50 rounded-lg">
+                <div className="text-4xl mb-4">{style.icon}</div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">{style.style}</h3>
+                <p className="text-gray-600 text-sm">{style.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 
