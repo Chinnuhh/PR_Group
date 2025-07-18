@@ -18,7 +18,7 @@ const CrockeryUnit: React.FC = () => {
         {/* Hero Image */}
         <div className="mb-12 rounded-xl overflow-hidden shadow-lg">
           <img
-            src="/crockeryunit_hero_1.jpg"
+            src="/crockery_hero_1.jpg"
             alt="Crockery Unit Design"
             className="w-full h-96 object-cover"
           />
@@ -29,7 +29,7 @@ const CrockeryUnit: React.FC = () => {
           <ServiceCard
             title="Crockery Unit Design Solutions"
             description="Create an elegant and organized space for your crockery with our tailored unit designs. From display shelves to hidden storage, we offer solutions that suit your style and space."
-            image="/crockeryunit_hero_2.jpg"
+            image="/crockery_hero_2.jpg"
             features={[
               'Custom storage solutions for dinnerware',
               'Display and organization options',
