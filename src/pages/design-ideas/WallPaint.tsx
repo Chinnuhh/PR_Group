@@ -29,7 +29,7 @@ const WallPaint: React.FC = () => {
           <ServiceCard
             title="Color That Defines Mood"
             description="Choose colors that enhance your space’s personality with our expert wall paint guidance and flawless finish application."
-            image="/wallpaint_hero_2"
+            image="/wallpaint_hero_2.jpg"
             features={[
               'Professional color consultation',
               'Custom paint techniques and finishes',
