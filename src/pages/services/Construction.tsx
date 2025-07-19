@@ -27,7 +27,7 @@ const Construction: React.FC = () => {
         {/* Hero Image */}
         <div className="mb-12 rounded-xl overflow-hidden shadow-lg">
           <img
-            src="/kidsbedroom_hero_1.jpg"
+            src="/IMG-20250717-WA0013.jpg"
             alt="Construction Services"
             className="w-full h-96 object-cover"
           />
