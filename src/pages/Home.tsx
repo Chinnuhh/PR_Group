@@ -200,26 +200,12 @@ const Home: React.FC<HomeProps> = ({ onAIAssistantClick }) => {
                 className="animate-fade-in-up h-full"
                 style={{ animationDelay: `${index * 200}ms` }}
               >
- const services = [
-  {
-    name: 'Constructions',
-    description: 'We build strong foundations with top-quality construction services.',
-    image: '/commercialexterior.png',
-    path: '/constructions',
-  },
-  {
-    name: 'Interiors',
-    description: 'Transform your space with elegant and modern interior design.',
-    image: '/home_hero_cow.jpg',
-    path: '/interiors',
-  },
-  {
-    name: 'Renovations',
-    description: 'Breathe new life into your home with our renovation services.',
-    image: '/livingroom_hero_1.jpg',
-    path: '/renovations',
-  },
-];
+ <ServiceCard
+  title={service.name}
+  description={service.description}
+  image={service.image}
+  navigateTo={service.path}
+/>
       {/* Featured Projects */}
       <section className="py-20 bg-gradient-to-br from-mustard-100 via-surface-white to-surface-beige animate-on-scroll">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
