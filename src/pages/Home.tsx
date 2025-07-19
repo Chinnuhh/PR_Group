@@ -200,7 +200,7 @@ const Home: React.FC<HomeProps> = ({ onAIAssistantClick }) => {
                 className="animate-fade-in-up h-full"
                 style={{ animationDelay: `${index * 200}ms` }}
               >
-              const services = [
+ const services = [
   {
     name: 'Constructions',
     description: 'We build strong foundations with top-quality construction services.',
