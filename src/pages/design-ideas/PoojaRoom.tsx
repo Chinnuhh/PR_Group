@@ -50,10 +50,10 @@ const PoojaRoom: React.FC = () => {
             {[
               '/pooja_hero_1.jpg',
               '/pooja_hero_2.jpg',
+              '/pooja_1.jpg',
+              '/pooja_2.jpg',
               '/pooja_3.jpg',
               '/pooja_4.jpg',
-              '/pooja_5.jpg',
-              '/pooja_6.jpg',
             ].map((img, index) => (
               <div key={index} className="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow group">
                 <img
