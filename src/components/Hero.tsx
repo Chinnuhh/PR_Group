@@ -31,7 +31,7 @@ const Hero: React.FC = () => {
       <div 
         className="absolute inset-0 w-full h-full z-0"
         style={{
-          backgroundImage: "url('/home_hero_cow.jpg')",
+          backgroundImage: "url('/homehero_red_wallpaint.jpg')",
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'
